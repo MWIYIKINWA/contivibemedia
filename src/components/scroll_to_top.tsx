@@ -42,7 +42,8 @@ const ScrollToTop: React.FC = () => {
             borderRadius: '50%',
             cursor: 'pointer',
             boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-            transition: 'opacity 0.3s ease-in-out'
+            transition: 'opacity 0.3s ease-in-out',
+            zIndex: 9999
           }}
         >
           <ArrowUp/>
