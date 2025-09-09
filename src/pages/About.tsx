@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/ui/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Users, Award, TrendingUp, Eye, Heart } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroBg from '../assets/images/header1.webp';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
 import WhatsAppChat from '@/components/whatsapp';
