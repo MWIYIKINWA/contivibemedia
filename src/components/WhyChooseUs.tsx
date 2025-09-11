@@ -42,7 +42,7 @@ const WhyChooseUsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
-            Why Brands Choose Contivibe Media
+            Why <span className="text-black">Brands Choose</span> Contivibe Media
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full" />
         </div>
@@ -51,13 +51,13 @@ const WhyChooseUsSection = () => {
           {features.map((feature, index) => (
             <div data-aos = "slide-left"
               key={index}
-              className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/80 hover:border-primary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10  hover-scale"
+              className="group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/80 hover: transition-all duration-500 hover:shadow-2xl hover:   hover-scale"
               style={{
                 animationDelay: `${index * 150}ms`
               }}
             >
               {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-2xl  group-hover: duration-500" />
               
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary flex items-center justify-center text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -80,7 +80,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         {/* Bottom accent */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '900ms' }}>
+        <div className="text-center mt-16" style={{ animationDelay: '900ms' }}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary">
             <CheckCircle className="w-5 h-5" />
             <span className="font-medium">Trusted by 500+ satisfied clients</span>
