@@ -125,21 +125,23 @@ const ClientsSection = () => {
         {/* Client Categories */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 font-roboto">
           <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-lg">
-            <div className="text-2xl font-bold text-primary mb-2">Government</div>
-            <div className="text-sm text-muted-foreground">Agencies & Institutions</div>
+            <div className="text-2xl font-bold text-primary mb-2">Corporate</div>
+            <div className="text-sm text-muted-foreground">Private Companies</div>
           </div>
           <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-lg">
             <div className="text-2xl font-bold text-primary mb-2">NGOs</div>
             <div className="text-sm text-muted-foreground">Non-Profit Organizations</div>
           </div>
           <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-lg">
-            <div className="text-2xl font-bold text-primary mb-2">Education</div>
-            <div className="text-sm text-muted-foreground">Universities & Schools</div>
+            <div className="text-2xl font-bold text-primary mb-2">Agencies</div>
+            <div className="text-sm text-muted-foreground">Agencies & Institutions</div>
           </div>
+
           <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-lg">
-            <div className="text-2xl font-bold text-primary mb-2">Corporate</div>
-            <div className="text-sm text-muted-foreground">Private Companies</div>
+            <div className="text-2xl font-bold text-primary mb-2">Events organizers</div>
+            <div className="text-sm text-muted-foreground">High-impact experiences</div>
           </div>
+
         </div>
 
         {/* Partnership CTA */}

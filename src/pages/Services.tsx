@@ -74,12 +74,9 @@ const Services = () => {
                 <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h4>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {service.description.length > 100
+                  <div className='font-sans text-muted-foreground mb-4 text-sm leading-relaxed' dangerouslySetInnerHTML={{ __html: service.description.length > 100
                     ? service.description.slice(0, 100) + "..."
-                    : service.description}
-                </p>
-                
+                    : service.description }} />
               </CardContent>
               
               <CardFooter className="p-6 pt-0">

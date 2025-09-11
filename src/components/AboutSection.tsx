@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Video, Phone, MessageCircle } from 'lucide-react';
-import aboutImage from '@/assets/images/flyer.webp';
+import aboutImage from '@/assets/images/CONTIVIBE strategy flyer.webp';
+import whatsapIcon from '@/assets/images/whatsappicon2.webp'
 
 const AboutSection = () => {
   return (
@@ -15,8 +16,8 @@ const AboutSection = () => {
                 About Contivibe Media
               </h2>
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight font-roboto">
-                We Tell Your Story Through{' '}
-                <span className="text-primary">Powerful Content</span>
+                Discover{' '}
+                <span className="text-primary">Who We Are</span>
               </h3>
             </div>
             
@@ -40,9 +41,9 @@ const AboutSection = () => {
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Target className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-foreground">Content Marketing</h4>
-                      <p className="text-sm text-muted-foreground">High-quality visuals and stories to grow your brand's engagement organically..</p>
+                    <div className='font-roboto'>
+                      <h4 className="font-semibold mb-2 text-foreground">Quality content</h4>
+                      <p className="text-sm text-muted-foreground ">High-quality visuals and stories to grow your brand's engagement organically..</p>
                     </div>
                   </div>
                 </CardContent>
@@ -54,7 +55,7 @@ const AboutSection = () => {
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Video className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
+                    <div className='font-roboto'>
                       <h4 className="font-semibold mb-2 text-foreground">Live Streaming Expertise</h4>
                       <p className="text-sm text-muted-foreground">Seamless live broadcasts tailored to engage your audience in real time.</p>
                     </div>
@@ -67,10 +68,11 @@ const AboutSection = () => {
             <div className="flex flex-wrap items-center gap-6 pt-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="font-medium">+256 773 123 456</span>
+                <span className="font-medium">(+256) 783 694161</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MessageCircle className="w-5 h-5 text-primary" />
+                {/* <MessageCircle className="w-5 h-5 text-primary" /> */}
+                <img src={whatsapIcon} alt="" height='30' width='30' />
                 <span className="font-medium">WhatsApp Available</span>
               </div>
             </div>
@@ -90,7 +92,7 @@ const AboutSection = () => {
             {/* Floating Stats Card */}
             <Card className="absolute -bottom-6 -left-6 bg-background shadow-2xl border-0">
               <CardContent className="p-6">
-                <div className="text-center">
+                <div className="text-center font-roboto">
                   <div className="text-2xl font-bold text-primary mb-1">100%</div>
                   <div className="text-sm text-muted-foreground">Client Satisfaction</div>
                 </div>

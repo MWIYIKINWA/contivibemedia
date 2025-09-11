@@ -31,7 +31,7 @@ const {isPlaying, toggleRadio} = useRadio();
           </h6>
 
             <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty" >
-            We Capture Moments <span className="font-kaushan">&amp;</span>  Impactful Content
+            We  Capture Moments <span className="font-kaushan">&amp;</span> Content <span className="font-kaushan">&amp;</span> turn them into brand impact
           </h6>
 
  {/* playing video */}
@@ -54,11 +54,8 @@ const {isPlaying, toggleRadio} = useRadio();
 {/* //.................... */}
           
           {/* Subtitle */}
-          <p className="text-lg md:text-xl lg:text-xl mb-2 text-gray-400 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
-            We specialize in creating impactful media that resonates with audiences.
-          </p>
-          <p className="text-lg md:text-xl lg:text-xl mb-12 text-gray-400 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
-            From content marketing to live streaming. Our services are designed to elevate your brand,
+          <p className="text-xl md:text-2xl lg:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
+            Ready for a content partner who moves fast and delivers results? <span className='text-primary font-bold'> Get in touch today</span><span className=' text-white font-bold'>.</span>
           </p>
           
           {/* CTA Buttons */}

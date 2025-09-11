@@ -35,11 +35,11 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-10 bg-white">
+    <section id="team" className="py-10 bg-white font-roboto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Our Team</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 ">Our Team</h2>
           <p className="text-lg text-gray-600 font-kaushan max-w-3xl mx-auto leading-relaxed font-sans">
             Our team is composed of passionate and skilled professionals who are dedicated to delivering exceptional results. With a diverse range of expertise and a commitment to excellence, we work collaboratively to achieve our goals and exceed client expectations.
           </p>
