@@ -63,7 +63,7 @@ const About = () => {
         <section className="py-10 bg-gradient-to-b from-muted/50 to-background">
           <div className="container-custom">
             <div className="text-center mb-10">
-              <h5 className="text-2xl md:text-4xl font-bold mb-6 font-robot">
+              <h5 className="text-2xl md:text-4xl font-bold mb-6 font-roboto">
                 We specialize in <span className="text-primary">four core services:</span>
               </h5>
             </div>

@@ -26,11 +26,11 @@ const {isPlaying, toggleRadio} = useRadio();
       <div className="relative z-10 container-custom text-center text-white">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
-          <h6 className="text-3xl md:text-2xl lg:text-2xl font-bold mb-3 animate-fade-up text-primary font-roboto mt-6">
-            WELCOME TO CONTIVIBE MEDIA
-          </h6>
+         <p className="text-xl md:text-2xl lg:text-2xl  text-gray-300 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
+            Ready for a content partner who moves fast and delivers results?
+          </p>
 
-            <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty" >
+            <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty mt-5" >
             We  Capture Moments <span className="font-kaushan">&amp;</span> Content <span className="font-kaushan">&amp;</span> turn them into brand impact
           </h6>
 
@@ -54,12 +54,12 @@ const {isPlaying, toggleRadio} = useRadio();
 {/* //.................... */}
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl lg:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
-            Ready for a content partner who moves fast and delivers results? <span className='text-primary font-bold'> Get in touch today</span><span className=' text-white font-bold'>.</span>
+          <p className="text-2xl md:text-3xl lg:text-4xl text-primary max-w-3xl mx-auto animate-fade-up font-extrabold" style={{animationDelay: '0.2s'}}>
+             Get in touch today
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{animationDelay: '0.4s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up mt-5" style={{animationDelay: '0.4s'}}>
             <Button
               size="lg"
               onClick={() => setShowVideo(true)}

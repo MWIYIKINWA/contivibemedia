@@ -23,12 +23,12 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 ">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
           {services.map((service, index) => (
             <Card 
               key={service.id} 
               data-aos="slide-right"
-              className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm animate-slide-left font-roboto"
+              className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm animate-slide-left font-roboto w-80 h-full md:w-80 md:h-full mx-auto"
               style={{
                 animationDelay: `${index * 0.1}s`
               }}

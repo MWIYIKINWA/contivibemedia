@@ -12,9 +12,9 @@ const AboutSection = () => {
           {/* Left Content */}
           <div data-aos="slide-right" className="space-y-10">
             <div>
-              <h2 className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">
+              {/* <h2 className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">
                 About Contivibe Media
-              </h2>
+              </h2> */}
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight font-roboto">
                 Discover{' '}
                 <span className="text-primary">Who We Are</span>
@@ -84,7 +84,7 @@ const AboutSection = () => {
               <img 
                 src={aboutImage} 
                 alt="Marketing and branding design workspace"
-                className="w-full h-[500px] lg:h-[600px] object-cover"
+                className="w-full h-full lg:h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>

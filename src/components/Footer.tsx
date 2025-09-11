@@ -10,6 +10,7 @@ import {
   Twitter
 } from 'lucide-react';
 import logo from '@/assets/images/logo-white.png'
+import { services } from '@/services/getservices';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,14 +24,11 @@ const Footer = () => {
     { name: 'Contact Us', href: '/contact' },
   ];
 
-  const services = [
-    'Content Marketing',
-    'Photography',
-    'Live Streaming',
-    'Video Production',
-    'Public Relations',
-    'Digital Strategy',
-  ];
+  const service_titles = services.map(service => (
+    {
+    title : service.title,
+    id : service.id
+  }))
 
   return (
     <footer className="bg-foreground text-background">
@@ -91,15 +89,15 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-primary font-roboto">Our Services</h4>
             <ul className="space-y-1 font-sans">
-              {services.map((service) => (
-                <li key={service}>
-                  <a 
+              {service_titles.map((service) => (
+                <li key={service.id}>
+                  <Link to={`/services/${service.id}`}>                 <a 
                     href="#"
                     className="text-background/80 hover:text-primary transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-primary mr-0 group-hover:mr-3 transition-all duration-300"></span>
-                    {service}
-                  </a>
+                    {service.title}
+                  </a></Link>
                 </li>
               ))}
             </ul>

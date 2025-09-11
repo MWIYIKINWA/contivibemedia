@@ -17,6 +17,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import ServiceDetail from "./pages/ServiceDetail";
 import NewsDetail from "./pages/NewsDetail";
+import GoToTop from "./components/GoToTop";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => {
         <Sonner />
         <RadioProvider>
           <BrowserRouter>
+          <GoToTop/>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
