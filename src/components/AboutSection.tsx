@@ -20,19 +20,19 @@ const AboutSection = () => {
                 <span className="text-primary">Who We Are</span>
               </h3>
             </div>
-            
+
             <div className="space-y-5 text-gray-700 text-md leading-relaxed font-sans">
               <p>
-              Contivibe Media Limited is a content & media production company specializing in creating impactful content for various platforms and capturing moments in Realtime.
+                Contivibe Media Limited is a content & media production company specializing in creating impactful content for various platforms and capturing moments in Realtime.
               </p>
               <p>
                 Contivibe Media combines "Conti" from "content" and "Vibe, vibe meaning "vibration" or "energy". This name means we are, a company that creates content that resonates with audiences, evoking a specific energy.
               </p>
               <p>
-              Every time we stand behind the lens or PC we are not putting something together, we are capturing moments and memories that speak 1000 words, content that resonates with audience. We blend creativity and positivity to produce moments, content full of energy, reflecting our mission to produce engaging and impactful media.
+                Every time we stand behind the lens or PC we are not putting something together, we are capturing moments and memories that speak 1000 words, content that resonates with audience. We blend creativity and positivity to produce moments, content full of energy, reflecting our mission to produce engaging and impactful media.
               </p>
             </div>
-            
+
             {/* Feature Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <Card className="hover-lift border-border/50">
@@ -48,7 +48,7 @@ const AboutSection = () => {
                   </div>
                 </CardContent>
               </Card>
-              
+
               <Card className="hover-lift border-border/50">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
@@ -63,7 +63,7 @@ const AboutSection = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             {/* Contact Info */}
             <div className="flex flex-wrap items-center gap-6 pt-6">
               <div className="flex items-center space-x-2">
@@ -77,23 +77,23 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right Image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img 
-                src={aboutImage} 
+              <img
+                src={aboutImage}
                 alt="Marketing and branding design workspace"
                 className="w-full h-full lg:h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
-            
+
             {/* Floating Stats Card */}
             <Card className="absolute -bottom-6 -left-6 bg-background shadow-2xl border-0">
               <CardContent className="p-6">
                 <div className="text-center font-roboto">
-                  <div className="text-2xl font-bold text-primary mb-1">100%</div>
+                  <div className="text-2xl font-bold text-primary mb-1">95%</div>
                   <div className="text-sm text-muted-foreground">Client Satisfaction</div>
                 </div>
               </CardContent>
