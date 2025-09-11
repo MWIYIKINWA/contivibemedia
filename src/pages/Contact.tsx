@@ -86,12 +86,7 @@ const Contact = () => {
       details: ['Plot 53, Kira Road- Kamwokya', 'Msm Chambers', 'P.O.BOX 169217, Kampala Uganda'],
       action: 'Get Directions'
     },
-    {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      details: ['(+256) 783 694161', 'Available 24/7'],
-      action: 'Chat Now'
-    }
+  
   ];
 
   const services = [
@@ -121,7 +116,7 @@ const Contact = () => {
         {/* Contact Information Cards */}
         <section className="py-6">
           <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
                   <CardContent className="p-6">
