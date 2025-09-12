@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import portfolio1 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.40 PM (1).jpeg';
-import portfolio2 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.40 PM (2).jpeg';
-import portfolio3 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.41 PM.jpeg';
-import portfolio4 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.42 PM.jpeg';
-import portfolio5 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
+import portfolio2 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.42 PM.jpeg';
+import portfolio3 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
+import portfolio4 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
 
 const VideoPortfolioSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,18 +13,18 @@ const VideoPortfolioSection = () => {
     {
       src: portfolio1,
       title: 'Nina Mugerwa',
-      description: 'Serenade Live Concert 2024'
+      description: 'Seasons Album Concert 2025'
     },
     {
-      src: portfolio4,
-      title: 'Cancer Run',
+      src: portfolio2,
+      title: 'Cancer run',
       description: '2024'
     },
     {
-      src: portfolio5,
-      title: 'UCEO Jennifer Bamuturaki ',
-      description: 'At CEO Workshop'
-    }
+      src: portfolio3,
+      title: 'Uganda Airlines CEO Jennifer Bamuturaki',
+      description: 'CEO Workshop'
+    },
   ];
 
   useEffect(() => {
@@ -53,23 +52,24 @@ const VideoPortfolioSection = () => {
 
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-10 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center lg:grid-cols-2 gap-8 items-center">
 
-            {/* Portfolio Slider Column */}
-          <div className="space-y-6">
-            {/* <div className="text-center lg:text-left">
+    {/* <div className="text-center lg:text-left">
               <h2 className="text-4xl font-bold text-foreground mb-4">
                 Portfolio Highlights
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 Discover our diverse range of projects across different industries 
                 and creative disciplines.
               </p>
             </div> */}
+        <div className="grid md:grid-cols-2 gap-12 items-center font-roboto">
+          {/* Portfolio Slider Column */}
+          <div className="space-y-6">
 
-            <div className="relative pr-4 border-r border-primary">
+
+            <div className="relative">
               <div className="relative overflow-hidden rounded-2xl bg-card shadow-lg">
                 <div 
                   className="flex transition-transform duration-500 ease-in-out"
@@ -126,56 +126,59 @@ const VideoPortfolioSection = () => {
             </div>
           </div>
 
-
-          {/* Video Column */}
-
-    
-            {/* <div className="space-y-3">            
-            <div className="relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
-              <div className="aspect-video bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
-                        <blockquote
-                        className="tiktok-embed"
-                        cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
-                        data-video-id="7478755829672348983"
-                        style={{ maxWidth: '605px', minWidth: '325px' }}
-                        >
-                        <section>
-                       
-                            <a
-                            target="_blank"
-                            title="♬ original sound - Contivibe Media"
-                            href="https://www.tiktok.com/music/original-sound-7478755868872952582?refer=embed"
-                            >
-                            ♬ original sound - Contivibe Media
-                            </a>
-                        </section>
-                        </blockquote>
-
+          {/* Videos Column */}
+          <div className="space-y-6">
+   
+            
+            {/* Videos Side by Side */}
+            <div className="flex gap-3">
+              {/* YouTube Shorts Video */}
+              <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
+                <div className="aspect-[9/16] max-h-100 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://youtube.com/shorts/WEr1sZTOcGo?si=3DDKoKjclDInYPu8"
+                    title="Contivibe Media Shorts"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+       
               </div>
-            </div>
-          </div> */}
 
+              {/* TikTok Video */}
+              <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
+                <div className="aspect-[9/16] max-h-96 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
+                 <blockquote
+  className="tiktok-embed"
+  cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
+  data-video-id="7478755829672348983"
+  style={{ maxWidth: '605px', minWidth: '325px' }}
+>
+  <section>
+    <a
+      target="_blank"
+      title="@contivibemedia"
+      href="https://www.tiktok.com/@contivibemedia?refer=embed"
+    >
+      @contivibemedia
+    </a>{" "}
+    Let's do it for you @Pearl Liquors{" "}
+    <a
+      target="_blank"
+      title="♬ original sound - Contivibe Media"
+      href="https://www.tiktok.com/music/original-sound-7478755868872952582?refer=embed"
+    >
+      ♬ original sound - Contivibe Media
+    </a>
+  </section>
+</blockquote>
 
-
-
-          <div className="space-y-6">            
-            <div className="relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
-              <div className="aspect-video bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
-                <iframe
-                  className="w-full h-full"
-                  src="https://youtube.com/shorts/WEr1sZTOcGo?si=WZHbtW7GsfbKYneZ"
-                  title="Contivibe Media Showreel"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                </div>
               </div>
             </div>
           </div>
-
-
-
-    
         </div>
       </div>
 
