@@ -137,7 +137,7 @@ const VideoPortfolioSection = () => {
                 <div className="aspect-[9/16] max-h-100 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
                   <iframe
                     className="w-full h-full"
-                    src="https://youtube.com/shorts/O3-abj8SFxk?si=uzs4R9Mc7Ff-5eLS"
+                    src="https://youtube.com/shorts/vGm99QPApmM?si=Ha1TSrhPhGFni6BQ"
                     title="Contivibe Media Shorts"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -151,18 +151,18 @@ const VideoPortfolioSection = () => {
               <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
                 <div className="aspect-[9/16] max-h-96 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
                  <blockquote
-  className="tiktok-embed"
-  cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
-  data-video-id="7478755829672348983"
-  style={{ maxWidth: '605px', minWidth: '325px' }}
+                        className="tiktok-embed"
+                        cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
+                        data-video-id="7478755829672348983"
+                        style={{ maxWidth: '605px', minWidth: '325px' }}
 >
   <section>
     <a
       target="_blank"
-      title="@contivibemedia"
+      title=""
       href="https://www.tiktok.com/@contivibemedia?refer=embed"
     >
-      @contivibemedia
+      
     </a>{" "}
     Let's do it for you @Pearl Liquors{" "}
     <a
