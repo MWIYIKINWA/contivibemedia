@@ -10,7 +10,7 @@ const DownloadButton = ({ path }: { path: string }) => {
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = path;
-      link.download = 'Portfolio.pdf';
+      link.download = 'contivibe.pdf';
       link.click();
 
       setStatus('done');

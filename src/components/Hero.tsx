@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import {Eye, Radio, PlayCircle, X, Pause } from 'lucide-react';
-import heroImage from '@/assets/images/back22.webp';
+import heroImage from '@/assets/images/mainback.webp';
 import { useRef, useState } from 'react';
 import { useRadio } from '@/context/AppContext';
 
