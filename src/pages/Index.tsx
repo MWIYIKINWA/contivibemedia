@@ -9,6 +9,7 @@ import ClientsSection from '@/components/ClientsSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
+import VideoPortfolioSection from '@/components/VideoPortfolioSlide';
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <WhatsAppButton />
         <ScrollToTop />
         <AboutSection />
+        <VideoPortfolioSection/>
         <WhyChooseUsSection/>
         <ServicesSection />
         <TeamSection />

@@ -83,7 +83,7 @@ const WhyChooseUsSection = () => {
         <div className="text-center mt-16" style={{ animationDelay: '900ms' }}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary">
             <CheckCircle className="w-5 h-5" />
-            <span className="font-medium">Trusted by 500+ satisfied clients</span>
+            <span className="font-medium">Trusted by 50+ satisfied clients</span>
           </div>
         </div>
       </div>
