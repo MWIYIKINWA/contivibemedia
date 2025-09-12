@@ -137,7 +137,7 @@ const VideoPortfolioSection = () => {
                 <div className="aspect-[9/16] max-h-100 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
                   <iframe
                     className="w-full h-full"
-                    src="https://youtube.com/shorts/WEr1sZTOcGo?si=3DDKoKjclDInYPu8"
+                    src="https://youtube.com/shorts/O3-abj8SFxk?si=uzs4R9Mc7Ff-5eLS"
                     title="Contivibe Media Shorts"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
