@@ -23,7 +23,7 @@ const {isPlaying, toggleRadio} = useRadio();
       />
       
       {/* Content */}
-      <div className="relative z-10 container-custom text-center text-white">
+      <div className="relative z-10 container-custom text-center text-white " >
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
          <p className="text-xl md:text-2xl lg:text-2xl  text-gray-300 max-w-3xl mx-auto animate-fade-up font-sans" style={{animationDelay: '0.2s'}}>
@@ -31,7 +31,7 @@ const {isPlaying, toggleRadio} = useRadio();
           </p>
 
             <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty mt-5" >
-            We  Capture Moments <span className="font-kaushan">&amp;</span> Transform them into brand impact
+            We  Capture Moments <span className="font-kaushan">&amp;</span> Transform them into Brand Impact
           </h6>
 
  {/* playing video */}

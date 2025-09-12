@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/ui/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
-import { Video, Camera, Film, TrendingUp, Eye, Heart } from 'lucide-react';
+import { Video, Camera, Film, TrendingUp, Eye, Heart, Radio, User, Pencil } from 'lucide-react';
 import heroBg from '../assets/images/header1.webp';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
@@ -17,13 +17,13 @@ const About = () => {
 
   const values = [
     {
+      icon: Camera,
+      title: 'Photography',
+    },
+    {
       icon: Video,
       title: 'Livestreaming & Videography',
     
-    },
-    {
-      icon: Camera,
-      title: 'Photography',
     },
     {
       icon: Film,
@@ -32,6 +32,18 @@ const About = () => {
     {
       icon: TrendingUp,
       title: 'Event Highlights & Recap Content',
+    },
+    {
+      icon: User,
+      title: 'Digital & Social Media Content',
+    },
+    {
+      icon: Pencil,
+      title: 'Graphic Design & Creative Visuals',
+    },
+    {
+      icon: Radio ,
+      title: 'Online Radio & Podcast Setup',
     }
   ];
 
@@ -45,6 +57,7 @@ const About = () => {
       />
       <WhatsAppChat/>
       <ScrollToTop/>
+      <AboutSection/>
        <main>
         {/* Hero Section */}
         <section className="py-10 bg-gradient-to-b from-background to-muted/50">
@@ -64,13 +77,13 @@ const About = () => {
           <div className="container-custom">
             <div className="text-center mb-10">
               <h5 className="text-2xl md:text-4xl font-bold mb-6 font-roboto">
-                We specialize in <span className="text-primary">four core services:</span>
+                Our <span className="text-primary">Core Services:</span>
               </h5>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-slide-left font-sans">
+            <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
               {values.map((value, index) => (
-                <Card  data-aos="slide-left"  key={value.title} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
+                <Card  data-aos="slide-left"  key={value.title} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm  w-80 h-full md:w-80 md:h-full mx-auto">
                   <CardContent className="p-8">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <value.icon className="w-8 h-8 text-primary" />
