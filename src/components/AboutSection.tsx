@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Video, Phone, MessageCircle } from 'lucide-react';
 import aboutImage from '@/assets/images/CONTIVIBE strategy flyer.webp';
-import whatsapIcon from '@/assets/images/whatsappicon2.webp'
+import whatsapIcon from '@/assets/images/whatsap.webp'
 
 const AboutSection = () => {
   return (
@@ -72,8 +72,10 @@ const AboutSection = () => {
               </div>
               <div className="flex items-center space-x-2">
                 {/* <MessageCircle className="w-5 h-5 text-primary" /> */}
-                <img src={whatsapIcon} alt="" height='30' width='30' />
-                <span className="font-medium">WhatsApp Available</span>
+                <a href="https://wa.me/256783694161" target='_blank' >
+                  <img src={whatsapIcon} alt="" height='50' width='50' />
+                </a>
+                <span className="font-medium">(+256) 783 694161</span>
               </div>
             </div>
           </div>
