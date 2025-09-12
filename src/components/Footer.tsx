@@ -11,6 +11,13 @@ import {
 } from 'lucide-react';
 import logo from '@/assets/images/logo-white.png'
 import { services } from '@/services/getservices';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTiktok,
+  faWhatsapp,
+  faXTwitter
+} from '@fortawesome/free-brands-svg-icons';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,17 +57,11 @@ const Footer = () => {
             
             {/* Social Media Links */}
             <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/contivibemedia" target='_blank'
+             <a 
+                href="https://www.linkedin.com/company/contivibemedia/"  target='_blank'
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
               >
-                <Facebook className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
-              </a>
-              <a 
-                href="https://www.instagram.com/contivibemedia/" target='_blank'
-                className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
-              >
-                <Instagram className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
+                <Linkedin className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300"  />
               </a>
               <a 
                 href="https://www.youtube.com/@Contivibemedia1" target='_blank'
@@ -69,17 +70,36 @@ const Footer = () => {
                 <Youtube className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
               </a>
               <a 
-                href="https://www.linkedin.com/company/contivibemedia/"  target='_blank'
+                href="https://www.tiktok.com/@contivibemedia?_t=8r8h6ic819p&_r=1" target='_blank'
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
               >
-                <Linkedin className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300"  />
+                <FontAwesomeIcon icon={faTiktok} className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
               </a>
-              <a 
+                <a 
                 href="https://x.com/contivibemedia" target='_blank'
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
               >
-                <Twitter className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
+                <FontAwesomeIcon icon={faXTwitter} className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
+              </a>  
+              <a 
+                href="https://www.instagram.com/contivibemedia/" target='_blank'
+                className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
+              >
+                <Instagram className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
+              </a>            
+              <a 
+                href="https://www.facebook.com/contivibemedia" target='_blank'
+                className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
+              >
+                <Facebook className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
               </a>
+                            <a 
+                href="https://wa.me/256783694161" target='_blank'
+                className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-background/10  transition-colors duration-300 group"
+              >
+                <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5 group-hover:text-primary-foreground transition-colors duration-300" />
+              </a>
+
 
             </div>
           </div>

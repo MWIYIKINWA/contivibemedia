@@ -4,7 +4,7 @@ import contentImg from '@/assets/images/service-1.webp';
 import streamingImg from '@/assets/images/service-5.webp';
 import tvcImg from '@/assets/images/service-4.webp';
 import shortdemo from '@/assets/images/service-5.webp';
-import digitalimg from '@/assets/images/service-6.2.webp';
+import digitalimg from '@/assets/images/graphics.webp';
 import photographyImg from '@/assets/images/service-2.1.webp';
 import eventsimg from '@/assets/images/eventsvideos.webp';
 import podcastimg from '@/assets/images/service-9.1.webp';
