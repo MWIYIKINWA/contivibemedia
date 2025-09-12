@@ -2,12 +2,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/ui/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
-import { Video, Camera, Film, TrendingUp, Eye, Heart, Radio, User, Pencil } from 'lucide-react';
+import { Video, Camera, Film, TrendingUp, Eye, Heart, Radio, User, Pencil, Mic, Instagram } from 'lucide-react';
 import heroBg from '../assets/images/header1.webp';
 import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 const About = () => {
   const breadcrumbs = [
@@ -34,7 +37,7 @@ const About = () => {
       title: 'Event Highlights & Recap Content',
     },
     {
-      icon: User,
+      icon: Instagram,
       title: 'Digital & Social Media Content',
     },
     {
@@ -42,7 +45,7 @@ const About = () => {
       title: 'Graphic Design & Creative Visuals',
     },
     {
-      icon: Radio ,
+      icon: Mic ,
       title: 'Online Radio & Podcast Setup',
     }
   ];
@@ -100,9 +103,9 @@ const secondRow = values.slice(4);
   </div>
 
   {/* Second Row: 3 items centered */}
-  <div className="grid grid-cols-3 gap-8 justify-center">
+  <div className="flex flex-row justify-center gap-5">
     {secondRow.map((value) => (
-      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm h-50 w-full">
+      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm h-50 w-45">
         <CardContent className="p-8">
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <value.icon className="w-8 h-8 text-primary" />
