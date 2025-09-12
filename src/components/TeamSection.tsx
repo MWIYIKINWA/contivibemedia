@@ -8,16 +8,6 @@ import deborah from '@/assets/images/team-deborah.webp'
 const Team = () => {
   const teamMembers = [
     {
-      name: "James Asaba",
-      position: "Marketing & Digital Strategist",
-      image: asaba
-    },
-    {
-      name: "Peter Mugerwa",
-      position: "Audio Producer",
-      image: peter
-    },
-    {
       name: "Ruth Alice Mbabazi",
       position: "Director",
       image: alice
@@ -28,10 +18,22 @@ const Team = () => {
       image: calvin
     },
     {
+      name: "James Asaba",
+      position: "Marketing & Digital Strategist",
+      image: asaba
+    },
+    {
       name: "Deborah Twinomujuni",
       position: "Market Research Analyst",
       image: deborah
-    }
+    },
+    
+    {
+      name: "Peter Mugerwa",
+      position: "Audio Producer",
+      image: peter
+    },
+ 
   ];
 
   return (
