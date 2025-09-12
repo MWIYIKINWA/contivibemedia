@@ -47,6 +47,10 @@ const About = () => {
     }
   ];
 
+  const firstRow = values.slice(0, 4);
+const secondRow = values.slice(4);
+
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -57,7 +61,6 @@ const About = () => {
       />
       <WhatsAppChat/>
       <ScrollToTop/>
-      <AboutSection/>
        <main>
         {/* Hero Section */}
         <section className="py-10 bg-gradient-to-b from-background to-muted/50">
@@ -73,7 +76,7 @@ const About = () => {
         </section>
 
                 {/* Brief */}
-        <section className="py-10 bg-gradient-to-b from-muted/50 to-background">
+      <section className="py-10 bg-gradient-to-b from-muted/50 to-background">
           <div className="container-custom">
             <div className="text-center mb-10">
               <h5 className="text-2xl md:text-4xl font-bold mb-6 font-roboto">
@@ -81,18 +84,49 @@ const About = () => {
               </h5>
             </div>
 
-            <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
-              {values.map((value, index) => (
-                <Card  data-aos="slide-left"  key={value.title} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm  w-80 h-full md:w-80 md:h-full mx-auto">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <value.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h4 className="text-xl  mb-3">{value.title}</h4>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <div className="flex flex-col items-center gap-8 font-sans animate-slide-left">
+  {/* First Row: 4 items */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    {firstRow.map((value) => (
+      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
+        <CardContent className="p-8">
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <value.icon className="w-8 h-8 text-primary" />
+          </div>
+          <h4 className="text-xl mb-3">{value.title}</h4>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+
+  {/* Second Row: 3 items centered */}
+  <div className="grid grid-cols-3 gap-8 justify-center">
+    {secondRow.map((value) => (
+      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm h-50 w-full">
+        <CardContent className="p-8">
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <value.icon className="w-8 h-8 text-primary" />
+          </div>
+          <h4 className="text-xl mb-3">{value.title}</h4>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
+
+    {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-slide-left font-sans items-center">
+  {values.map((value, index) => (
+    <Card data-aos="slide-left" key={value.title} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm w-full h-full">
+      <CardContent className="p-8">
+        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <value.icon className="w-8 h-8 text-primary" />
+        </div>
+        <h4 className="text-xl mb-3">{value.title}</h4>
+      </CardContent>
+    </Card>
+  ))}
+</div> */}
 
             <div className="text-xl text-muted-foreground leading-relaxed mt-10 px-16 font-sans text-center">
               <p>From real-time event coverage to cinematic storytelling, 

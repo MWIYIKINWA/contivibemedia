@@ -160,7 +160,7 @@ const ClientsSection = () => {
               Start Your Project
             </button></Link>
 
-              <DownloadButton  path='../assets/images/contivibe.pdf'/>           
+              <DownloadButton  path='../assets/images/CONTIVIBE_FILE.pdf'/>           
  
           </div>
         </div>
