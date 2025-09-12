@@ -10,9 +10,14 @@ import client8 from '@/assets/images/client8.png'
 import client9 from '@/assets/images/client9.png'
 import client10 from '@/assets/images/client10.png'
 import { Link } from 'react-router-dom';
+import { Download } from 'lucide-react';
+import DownloadButton from './DownloadFile';
+
 
 const ClientsSection = () => {
-  const [currentOffset, setCurrentOffset] = useState(0);
+  
+
+ const [currentOffset, setCurrentOffset] = useState(0);
 
   // Client logos and names
   const clients = [
@@ -154,6 +159,9 @@ const ClientsSection = () => {
                        <button className="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 font-roboto">
               Start Your Project
             </button></Link>
+
+              <DownloadButton  path='../assets/images/contivibe.pdf'/>           
+ 
           </div>
         </div>
       </div>

@@ -102,10 +102,10 @@ export default {
 					opacity: '1', transform: 'scale(1.2)' 
 				      },
 					'50%': { 
-						opacity: '0.8', transform: 'scale(1)' 
+						opacity: '1', transform: 'scale(1)' 
 					  },
 					'100%': { 
-						opacity: '0.95', transform: 'scale(1.2)'},
+						opacity: '1', transform: 'scale(1.2)'},
 				},
 				'slide-left':{
                     '0%': {

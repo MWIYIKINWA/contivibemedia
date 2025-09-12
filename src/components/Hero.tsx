@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import {Eye, Radio, PlayCircle, X, Pause } from 'lucide-react';
-import heroImage from '@/assets/images/header.webp';
+import heroImage from '@/assets/images/back22.webp';
 import { useRef, useState } from 'react';
 import { useRadio } from '@/context/AppContext';
 
@@ -16,7 +16,7 @@ const {isPlaying, toggleRadio} = useRadio();
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat  animate-fade-in"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in"
         style={{ 
           backgroundImage: `linear-gradient(135deg, rgba(8, 8, 8, 0.78), rgba(44, 44, 44, 0.4)), url(${heroImage})`
         }}
@@ -31,7 +31,7 @@ const {isPlaying, toggleRadio} = useRadio();
           </p>
 
             <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty mt-5" >
-            We  Capture Moments <span className="font-kaushan">&amp;</span> Content <span className="font-kaushan">&amp;</span> turn them into brand impact
+            We  Capture Moments <span className="font-kaushan">&amp;</span> Transform them into brand impact
           </h6>
 
  {/* playing video */}
@@ -73,7 +73,7 @@ const {isPlaying, toggleRadio} = useRadio();
               variant="outline"
               size="lg"
               onClick={toggleRadio}
-              className="border-2 border-white text-white hover:bg-white hover:text-primary px-4 py-3  backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-primary hover: hover:text-primary px-4 py-3  backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105 bg-white"
             >
              {isPlaying ? <><Pause className="w-5 h-5 mr-2"/> Playing....</>  :  <><Radio className="w-5 h-5 mr-2" /> Listen to HiFi Radio</>
               }
