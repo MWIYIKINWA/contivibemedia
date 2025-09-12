@@ -90,7 +90,7 @@ const AboutSection = () => {
             </div>
 
             {/* Floating Stats Card */}
-            <Card className="absolute -bottom-6 -left-6 bg-background shadow-2xl border-0">
+            <Card className="absolute -left-6 bg-background shadow-2xl border-0">
               <CardContent className="p-6">
                 <div className="text-center font-roboto">
                   <div className="text-2xl font-bold text-primary mb-1">95%</div>
