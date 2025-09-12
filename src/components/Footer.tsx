@@ -108,7 +108,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-primary font-roboto">Our Services</h4>
-            <ul className="space-y-1 font-sans">
+            <ul className="text-sm space-y-1 font-sans md:text-md">
               {service_titles.map((service) => (
                 <li key={service.id}>
                   <Link to={`/services/${service.id}`}>                 <a 
