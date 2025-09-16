@@ -90,7 +90,7 @@ const NewsDetail = () => {
               </div>
               
               <div className="prose max-w-none">
-                <div className="text-lg mb-6 leading-relaxed" dangerouslySetInnerHTML={{__html: post.excerpt}} />
+                <div className="text-lg mb-6 leading-relaxed text-sm" dangerouslySetInnerHTML={{__html: post.excerpt}} />
                  
                 
                 

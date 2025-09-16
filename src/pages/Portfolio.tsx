@@ -116,11 +116,11 @@ const Portfolio = () => {
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-b from-background to-muted/50">
           <div className="container-custom font-roboto">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2">
+            <div className="max-w-4xl mx-auto ">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2 text-center">
                 Creating <span className="text-primary">Impactful Media Content</span>
               </h1>
-              <p className="text-md text-muted-foreground leading-relaxed font-sans">
+              <p className="text-md text-muted-foreground leading-relaxed font-sans  md:text-center">
               Creating Impactful Digital Solutions
                   At Contivibe, we deliver innovative digital solutions that engage and empower businesses. From cutting-edge web development to creative content strategies, our services are tailored to help clients thrive in the digital age
               </p>
