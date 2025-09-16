@@ -13,7 +13,7 @@ const VideoPortfolioSection = () => {
     {
       src: portfolio1,
       title: 'Nina Mugerwa',
-      description: 'Seasons Album Concert 2025'
+      description: 'Serenade 2025'
     },
     {
       src: portfolio2,
@@ -127,7 +127,7 @@ const VideoPortfolioSection = () => {
           </div>
 
           {/* Videos Column */}
-          <div className="space-y-6">
+          <div className="grid grid-col-1 md:space-y-6">
    
             
             {/* Videos Side by Side */}

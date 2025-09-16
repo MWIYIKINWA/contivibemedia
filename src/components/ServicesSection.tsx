@@ -22,58 +22,62 @@ const ServicesSection = () => {
           </h3>
         </div>
 
+
         {/* Services Grid */}
-        <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
-          {services.map((service, index) => (
-            <Card 
-              key={service.id} 
-              data-aos="slide-right"
-              className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm animate-slide-left font-roboto w-80 h-full md:w-80 md:h-full mx-auto"
-              style={{
-                animationDelay: `${index * 0.1}s`
-              }}
+    
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-content-center gap-4 max-w-7xl w-full h-full px-4 font-roboto">
+    {services.map((service, index) => (
+      <Card
+        key={service.id}
+        data-aos="slide-right"
+        className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm w-full max-w-sm mx-auto"
+        style={{
+          animationDelay: `${index * 0.1}s`
+        }}
+      >
+        <CardHeader className="p-0">
+          <div className="relative overflow-hidden rounded-t-lg">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-primary/60 transition-colors duration-300" />
+          </div>
+        </CardHeader>
+
+        <CardContent className="p-6">
+          <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+            {service.title}
+          </h4>
+          <div
+            className="font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html:
+                service.description.length > 100
+                  ? service.description.slice(0, 100) + "..."
+                  : service.description
+            }}
+          />
+        </CardContent>
+
+        <CardFooter className="p-6 pt-0">
+          <Link to={`/services/${service.id}`}>
+            <Button
+              variant="ghost"
+              className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
             >
-              <CardHeader className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-primary/60 transition-colors duration-300" />
-                  
-                  {/* Icon Overlay */}
-                  {/* <div className="absolute bottom-4 left-4">
-                    <div className="w-12 h-12 bg-background/90 backdrop-blur-sm rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <service.icon className="w-6 h-6" />
-                    </div>
-                  </div> */}
-                </div>
-              </CardHeader>
-              
-              <CardContent className=" p-6">
-                <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h4>
-                 <div className='font-sans text-muted-foreground mb-4 text-sm leading-relaxed' dangerouslySetInnerHTML={{ __html: service.description.length > 100
-                    ? service.description.slice(0, 100) + "..."
-                    : service.description }} />
-              </CardContent>
-              
-              <CardFooter className="p-6 pt-0">
-                 <Link to={`/services/${service.id}`}>
-                  <Button 
-                  variant="ghost" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-                 </Link>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+              Learn More
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+          </Link>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+
+
+
         
         {/* CTA Section */}
         {/* <div className="text-center mt-16">

@@ -18,7 +18,7 @@ const About = () => {
     { name: 'About' }
   ];
 
-  const values = [
+  const core_services = [
     {
       icon: Camera,
       title: 'Photography',
@@ -50,9 +50,31 @@ const About = () => {
     }
   ];
 
-  const firstRow = values.slice(0, 4);
-const secondRow = values.slice(4);
-
+const values = [
+    {
+      id: 1,
+      title: 'Creativity',
+      description: 'We embrace innovative ideas in all our projects',
+      color: 'bg-primary text-white'
+    },
+    {
+      id: 2, 
+      title: 'Positivity',
+      description: 'We foster a positive and energetic environment that reflects in our content',
+      color: 'bg-red-50 text-red-600 dark:bg-red-950/20 dark:text-red-400'
+    },
+    {
+      id: 3,
+      title: 'Authenticity',
+      description: 'We capture genuine moments that truly connects with our audience',
+      color: 'bg-primary text-white'
+    },
+    {
+      id: 4,
+      title: 'Impact',
+      description: 'We aim to produce media that leaves a lasting impression and engages viewers on a deeper level'
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -90,7 +112,7 @@ const secondRow = values.slice(4);
             <div className="flex flex-col items-center gap-8 font-sans animate-slide-left">
   {/* First Row: 4 items */}
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {firstRow.map((value) => (
+    {core_services.map((value) => (
       <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
         <CardContent className="p-8">
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -102,19 +124,7 @@ const secondRow = values.slice(4);
     ))}
   </div>
 
-  {/* Second Row: 3 items centered */}
-  <div className="flex flex-row justify-center gap-5">
-    {secondRow.map((value) => (
-      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm h-50 w-45">
-        <CardContent className="p-8">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <value.icon className="w-8 h-8 text-primary" />
-          </div>
-          <h4 className="text-xl mb-3">{value.title}</h4>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
+
 </div>
 
 
@@ -143,7 +153,7 @@ const secondRow = values.slice(4);
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-16">
+        <section className="py-10">
           <div className="container-custom">
             <div  data-aos="slide-right"  className="grid lg:grid-cols-2 gap-12">
               <Card className="border-0 shadow-lg bg-card/50 backdrop-blur-sm">
@@ -177,40 +187,51 @@ positivity, and ability to provoke specific energy through our work.
               </Card>
             </div>
           </div>
+         
         </section>
 
+      <hr className="mx-16 border-t border-primary"/>
 
+        {/* Our values */}
+     <section className="section-padding bg-background font-roboto">
+      <div className="container-custom">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">
+            Our Values
+          </h2>
+        </div>
 
-        {/* Our Story */}
-        {/* <section className="section-padding">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Our <span className="text-primary">Story</span>
-                </h2>
-              </div>
+        {/* Values Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {values.map((value, index) => (
+            <Card 
+              key={value.id}
+              className={`group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm text-center ${value.color}`}
+              style={{
+                animationDelay: `${index * 0.1}s`
+              }}
+            >
+              <CardContent className="p-8">
+                {/* Icon */}
+                <div className="mx-auto mb-6 relative">
+                  {/* Subtle glow effect */}
+                  <div className={`absolute inset-0 w-16 h-16 rounded-2xl  opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300`} />
+                </div>
 
-              <div className="prose prose-lg max-w-none text-muted-foreground">
-                <p className="mb-6">
-                  Founded with a passion for storytelling and a vision to transform how organizations communicate with their audiences, Contivibe Media has grown from a small creative team to a comprehensive media agency serving clients across Uganda and beyond.
+                {/* Content */}
+                <h4 className="text-xl font-bold mb-4 group-hover:text-foreground transition-colors duration-300">
+                  {value.title}
+                </h4>
+                <p className="text-foreground text-sm leading-relaxed font-sans">
+                  {value.description}
                 </p>
-                
-                <p className="mb-6">
-                  Our journey began when our founders recognized a gap in the market for authentic, culturally-relevant content creation that truly resonates with East African audiences. We started with a simple belief: every organization has a unique story worth telling, and with the right approach, that story can create powerful connections and drive meaningful change.
-                </p>
-
-                <p className="mb-6">
-                  Today, we continue to push the boundaries of creative excellence, combining traditional storytelling techniques with cutting-edge technology to deliver content that not only looks great but also achieves our clients' strategic objectives.
-                </p>
-
-                <p>
-                  As we look to the future, we remain committed to our founding principles while constantly evolving to meet the changing needs of our clients and the dynamic media landscape. We're not just creating content – we're building bridges between brands and their communities, one story at a time.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
 
         {/* Stats */}
         <section className="section-padding bg-gradient-to-b from-muted/50 to-background font-sans">

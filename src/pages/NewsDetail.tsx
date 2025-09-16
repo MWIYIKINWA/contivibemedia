@@ -90,9 +90,9 @@ const NewsDetail = () => {
               </div>
               
               <div className="prose max-w-none">
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  {post.excerpt}
-                </p>
+                <div className="text-lg mb-6 leading-relaxed" dangerouslySetInnerHTML={{__html: post.excerpt}} />
+                 
+                
                 
                 {/* In a real app, this would be the full content from the post */}
                 <div className="space-y-4">
@@ -118,13 +118,14 @@ const NewsDetail = () => {
         </section>
 
         {/* Related Articles */}
-        {relatedPosts.length > 0 && (
-          <section className="py-12 bg-muted/30">
+        {/* {relatedPosts.length > 0 && (
+          <section className="py-12 bg-muted/30 font-roboto">
             <div className="container-custom">
               <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedPosts.map(relatedPost => (
-                  <Card key={relatedPost.id} className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <Link to={`/news/${relatedPost.id}`}>
+                                    <Card key={relatedPost.id} className="border-0 shadow-md hover:shadow-lg transition-shadow">
                     <img 
                       src={relatedPost.image} 
                       alt={relatedPost.title}
@@ -138,9 +139,13 @@ const NewsDetail = () => {
                       <h3 className="font-bold mb-2 line-clamp-2">
                         {relatedPost.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                        {relatedPost.excerpt}
-                      </p>
+                      <div className="text-sm text-muted-foreground mb-4 line-clamp-2" dangerouslySetInnerHTML={{__html:
+                              relatedPost.excerpt.length > 100
+                          ? relatedPost.excerpt.slice(0, 100) + "..."
+                         : relatedPost.excerpt
+                      }} />
+                        
+                      
                       <Button asChild variant="outline" size="sm">
                         <Link to={`/news/${relatedPost.id}`}>
                           Read More
@@ -148,11 +153,12 @@ const NewsDetail = () => {
                       </Button>
                     </CardContent>
                   </Card>
+                  </Link>
                 ))}
               </div>
             </div>
           </section>
-        )}
+        )} */}
       </main>
 
       <Footer />

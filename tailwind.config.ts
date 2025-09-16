@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				keanutty: ['Keanutty'],
+				keanutty: ['Keanutty', 'Poppins'],
 				roboto: ['Roboto', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
 				kaushan: ['kaushan-script-regular','Kaushan Script', 'cursive'],

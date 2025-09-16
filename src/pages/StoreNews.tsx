@@ -21,11 +21,6 @@ const StoreNews = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-
- 
-
-
-
  
 
   const filteredPosts = blogPosts.filter(post => {
@@ -112,9 +107,9 @@ const StoreNews = () => {
                     {featuredPost.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {featuredPost.excerpt}
-                  </p>
+                  <div className="text-muted-foreground mb-6 leading-relaxed font-sans" dangerouslySetInnerHTML={{__html:            featuredPost.excerpt.length > 100
+                          ? featuredPost.excerpt.slice(0, 100) + "..."
+                         : featuredPost.excerpt}}/>    
                   
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -168,7 +163,7 @@ const StoreNews = () => {
                 <Link to={`/news/${post.id}`}>
                  <Card 
                   key={post.id}
-                  className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm overflow-hidden"
+                  className="group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm w-full h-full overflow-hidden"
                   style={{
                     animationDelay: `${index * 0.1}s`
                   }}
@@ -204,9 +199,14 @@ const StoreNews = () => {
                   </CardHeader>
                   
                   <CardContent className="pt-0">
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                      {post.excerpt}
-                    </p>
+                    <div className="text-muted-foreground text-sm mb-4 leading-relaxed"  dangerouslySetInnerHTML={{
+                           __html:
+                   post.excerpt.length > 100
+                  ? post.excerpt.slice(0, 100) + "..."
+                  : post.excerpt
+                      }}/>
+                     
+                    
                   
                     
                     <div className="flex items-center justify-between">

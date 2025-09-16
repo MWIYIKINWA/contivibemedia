@@ -9,6 +9,7 @@ import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import { services } from '../services/getservices';
 import { features } from 'process';
+import DownloadButton from '@/components/DownloadFile';
 
 const ServiceDetail = () => {
   const { id } = useParams();
@@ -94,11 +95,18 @@ const ServiceDetail = () => {
       
                 </div>
 
-                 <Link to='/contact'>
+              
+                     <Link to='/contact'>
                 <Button size="lg" className="bg-primary hover:bg-brand-red-hover">
                   Contact Us
                 </Button>
                  </Link>
+
+                  <div className='mt-10'>
+                   <DownloadButton  path='../CONTIVIBE_FILE.pdf'/>  
+                 </div> 
+                
+
               </div>
 
 

@@ -114,14 +114,15 @@ const Portfolio = () => {
       />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-b from-background to-muted/50">
+        <section className="py-16 bg-gradient-to-b from-background to-muted/50">
           <div className="container-custom font-roboto">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2">
-                Creating <span className="text-primary">Impactful Digital Solutions</span>
+                Creating <span className="text-primary">Impactful Media Content</span>
               </h1>
               <p className="text-md text-muted-foreground leading-relaxed font-sans">
-              At Contivibe, we deliver innovative digital solutions that engage and empower businesses. From cutting-edge web development to creative content strategies, our services are tailored to help clients thrive in the digital age.
+              Creating Impactful Digital Solutions
+                  At Contivibe, we deliver innovative digital solutions that engage and empower businesses. From cutting-edge web development to creative content strategies, our services are tailored to help clients thrive in the digital age
               </p>
             </div>
           </div>
@@ -156,7 +157,7 @@ const Portfolio = () => {
                     animationDelay: `${index * 0.1}s`
                   }}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden" onMouseMove={() => setSelectedImage(project.image)} >
                     <img 
                       src={project.image} 
                     />
@@ -226,19 +227,19 @@ const Portfolio = () => {
           <div className="container-custom">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">200+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">20+</div>
                 <div className="text-muted-foreground">Projects Completed</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">10+</div>
                 <div className="text-muted-foreground">Satisfied Clients</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">10M+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500K+</div>
                 <div className="text-muted-foreground">Content Views</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
                 <div className="text-muted-foreground">Hours Streamed</div>
               </div>
             </div>

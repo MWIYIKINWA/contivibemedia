@@ -33,7 +33,8 @@ const DownloadButton = ({ path }: { path: string }) => {
   return (
     <button
       onClick={handleDownload}
-      className="px-10 py-3 border-2 border-foreground text-foreground font-semibold rounded-lg hover:bg-foreground hover:text-primary-foreground transition-colors duration-300 font-roboto flex"
+      className="px-12 py-3 border-2 border-foreground text-foreground font-semibold rounded-lg hover:bg-foreground hover:text-primary-foreground transition-colors duration-300 flex items-center justify-center
+      "
     >
       <Download className="mr-4" />
       {getLabel()}
@@ -42,3 +43,6 @@ const DownloadButton = ({ path }: { path: string }) => {
 };
 
 export default DownloadButton;
+
+
+           

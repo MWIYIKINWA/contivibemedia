@@ -154,14 +154,14 @@ const ClientsSection = () => {
           <p className="text-lg text-muted-foreground mb-6 font-roboto">
             Ready to join our growing list of satisfied clients?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Link to='/contact'>
-                       <button className="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 font-roboto">
+      
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+             <Link to='/contact'>       <button className="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
               Start Your Project
             </button></Link>
-
-              <DownloadButton  path='../assets/images/CONTIVIBE_FILE.pdf'/>           
- 
+           <Link to='/'>
+           <DownloadButton  path='../CONTIVIBE_FILE.pdf'/>  
+           </Link>         
           </div>
         </div>
       </div>

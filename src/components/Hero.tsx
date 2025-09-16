@@ -3,6 +3,7 @@ import {Eye, Radio, PlayCircle, X, Pause } from 'lucide-react';
 import heroImage from '@/assets/images/mainback.webp';
 import { useRef, useState } from 'react';
 import { useRadio } from '@/context/AppContext';
+import TypingAnimation from './TypingAnimation';
 
 const Hero = () => {
 
@@ -18,7 +19,7 @@ const {isPlaying, toggleRadio} = useRadio();
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in"
         style={{ 
-          backgroundImage: `linear-gradient(135deg, rgba(8, 8, 8, 0.78), rgba(44, 44, 44, 0.4)), url(${heroImage})`
+          backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url(${heroImage})`
         }}
       />
       
@@ -31,7 +32,14 @@ const {isPlaying, toggleRadio} = useRadio();
           </p>
 
             <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty mt-5" >
-            We  Capture Moments <span className="font-kaushan">&amp;</span> Transform them into Brand Impact
+            We  Capture Moments <span className="font-kaushan">&amp;</span> {' '}
+             <TypingAnimation 
+              text="Transform them into Brand Impact" 
+              speed={100}
+              delay={800}
+              infinite={true}
+              className="text-gradient-red bg-gradient-to-r from-white to-brand-red-hover bg-clip-text text-transparent"
+            />
           </h6>
 
  {/* playing video */}
