@@ -121,7 +121,7 @@ const Portfolio = () => {
                 Creating <span className="text-primary">Impactful Media Content</span>
               </h1>
               <p className="text-md text-muted-foreground leading-relaxed font-sans  md:text-center">
-              Creating Impactful Digital Solutions
+              
                   At Contivibe, we deliver innovative digital solutions that engage and empower businesses. From cutting-edge web development to creative content strategies, our services are tailored to help clients thrive in the digital age
               </p>
             </div>

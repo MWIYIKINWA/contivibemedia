@@ -162,7 +162,7 @@ From hype videos and speaker promos to highlight reels and recap edits.</p><br>
   description: `<p>At Contivibe Media, we make it simple for brands to launch and manage professional online radio shows and podcasts. 
 From designing the right studio setup to providing full production support, we help you create audio experiences 
 that connect with audiences, build authority, and strengthen your brand voice.</p><br>
-  <p><strong>hat We Deliver:</strong></p><br>
+  <p><strong>What We Deliver:</strong></p><br>
   <p>Studio Setup & Equipment Guidance – Advising and installing the right microphones, mixers, software, and acoustics for professional sound.</p><br>
   <p>Podcast & Radio Production – End-to-end recording, editing, mixing, and mastering for clear, engaging audio.
 Show Concept & Content Development – Helping you define themes, formats, and scripts that align with your brand goals.</p><br>

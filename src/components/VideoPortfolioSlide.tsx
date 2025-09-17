@@ -5,8 +5,11 @@ import portfolio1 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 
 import portfolio2 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.42 PM.jpeg';
 import portfolio3 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
 import portfolio4 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
+import { fetchYouTubeVideos, YoutubeVideo } from '@/services/getYoutubeVideos';
 
 const VideoPortfolioSection = () => {
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const portfolioImages = [
@@ -55,16 +58,10 @@ const VideoPortfolioSection = () => {
     <section className="py-10 bg-muted/30">
       <div className="container mx-auto px-4">
 
-    {/* <div className="text-center lg:text-left">
-              <h2 className="text-4xl font-bold text-foreground mb-4">
-                Portfolio Highlights
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                Discover our diverse range of projects across different industries 
-                and creative disciplines.
-              </p>
-            </div> */}
+  
         <div className="grid md:grid-cols-2 gap-12 items-center font-roboto">
+
+        
           {/* Portfolio Slider Column */}
           <div className="space-y-6">
 
@@ -135,14 +132,16 @@ const VideoPortfolioSection = () => {
               {/* YouTube Shorts Video */}
               <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
                 <div className="aspect-[9/16] max-h-100 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
-                  <iframe
+    
+    
+                  {/* <iframe
                     className="w-full h-full"
                     src="https://youtube.com/shorts/vGm99QPApmM?si=Ha1TSrhPhGFni6BQ"
                     title="Contivibe Media Shorts"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                  ></iframe>
+                  ></iframe> */}
                 </div>
        
               </div>
@@ -154,25 +153,24 @@ const VideoPortfolioSection = () => {
                         className="tiktok-embed"
                         cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
                         data-video-id="7478755829672348983"
-                        style={{ maxWidth: '605px', minWidth: '325px' }}
->
-  <section>
-    <a
-      target="_blank"
-      title=""
-      href="https://www.tiktok.com/@contivibemedia?refer=embed"
-    >
-      
-    </a>{" "}
-    Let's do it for you @Pearl Liquors{" "}
-    <a
-      target="_blank"
-      title="♬ original sound - Contivibe Media"
-      href="https://www.tiktok.com/music/original-sound-7478755868872952582?refer=embed"
-    >
-      ♬ original sound - Contivibe Media
-    </a>
-  </section>
+                        style={{ maxWidth: '605px', minWidth: '325px' }}>
+                          <section>
+                            <a
+                              target="_blank"
+                              title=""
+                              href="https://www.tiktok.com/@contivibemedia?refer=embed"
+                            >
+                              
+                            </a>{" "}
+                            Let's do it for you @Pearl Liquors{" "}
+                            <a
+                              target="_blank"
+                              title="♬ original sound - Contivibe Media"
+                              href="https://www.tiktok.com/music/original-sound-7478755868872952582?refer=embed"
+                            >
+                              ♬ original sound - Contivibe Media
+                            </a>
+                          </section>
 </blockquote>
 
                 </div>
