@@ -34,7 +34,7 @@ const GoogleRatingSection = () => {
 
   const handleRateUs = () => {
     // Replace with actual Google Business profile URL
-    const googleBusinessUrl = "https://www.google.com/search?sca_esv=37b289db0e7768a1&rlz=1C1FKPE_enUG1128UG1128&sxsrf=AE3TifNtSJ8Ns8cDM7IbyIFnmSx6CFOueQ:1758089185984&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E3ba4jaRTE3dMAo-rOva4kQlQk8diYGS1mAF7oE8OgH2rRaq0CyVCJyun8xtB52oU5YaJr_6NjTej93jzzdJ_2E4x30E&q=Contivibe+Media+Reviews&sa=X&ved=2ahUKEwjhxqfLkN-PAxVYYEEAHTzTGUUQ0bkNegQIMhAE&biw=1153&bih=552&dpr=1#lrd=0x177dbd1b06464177:0xc35baa7feea3c978,3,,,,";
+    const googleBusinessUrl = "https://g.page/r/CXjJo-5_qlvDEAI/review";
     window.open(googleBusinessUrl, '_blank');
   };
 
