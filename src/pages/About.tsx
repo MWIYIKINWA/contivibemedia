@@ -91,7 +91,7 @@ const values = [
         <section className="py-10 bg-gradient-to-b from-background to-muted/50">
           <div className="container-custom">
             <div data-aos="slide-right" className="max-w-4xl mx-auto text-center">
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8 font-sans">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8 font-sans text-justify md:text-center">
                At Contivibe Media, we don’t just produce content, we create memorable experiences. 
               With every frame, shot, and edit, we deliver value-driven storytelling that keeps audiences connected, engaged, and inspired.
               </p>
@@ -111,37 +111,25 @@ const values = [
 
             <div className="flex flex-col items-center gap-8 font-sans animate-slide-left">
   {/* First Row: 4 items */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {core_services.map((value) => (
-      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
-        <CardContent className="p-8">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <value.icon className="w-8 h-8 text-primary" />
-          </div>
-          <h4 className="text-xl mb-3">{value.title}</h4>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
+                  <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto px-4 font-roboto">
+                    {core_services.map((value) => (
+                      <Card key={value.title} data-aos="slide-left" className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] max-w-sm">
+                        <CardContent className="p-8">
+                          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <value.icon className="w-8 h-8 text-primary" />
+                          </div>
+                          <h4 className="text-xl mb-3">{value.title}</h4>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
 
 
-</div>
+            </div>
 
 
-    {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-slide-left font-sans items-center">
-  {values.map((value, index) => (
-    <Card data-aos="slide-left" key={value.title} className="text-center hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm w-full h-full">
-      <CardContent className="p-8">
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <value.icon className="w-8 h-8 text-primary" />
-        </div>
-        <h4 className="text-xl mb-3">{value.title}</h4>
-      </CardContent>
-    </Card>
-  ))}
-</div> */}
 
-            <div className="text-xl text-muted-foreground leading-relaxed mt-10 px-16 font-sans text-center">
+            <div className="text-xl text-muted-foreground leading-relaxed mt-10 px-16 font-sans text-justify md:text-center">
               <p>From real-time event coverage to cinematic storytelling, 
                       we provide end-to-end visual solutions that elevate brands, celebrate milestones, and document impact. 
                       Our team combines creativity and technical expertise to ensure each moment is professionally captured and 

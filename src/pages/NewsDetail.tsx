@@ -103,7 +103,7 @@ const NewsDetail = () => {
                 
                 {/* Tags */}
                 <div className="mt-8 pt-6 border-t">
-                  <h4 className="text-sm font-medium mb-2">Tags:</h4>
+                  {/* <h4 className="text-sm font-medium mb-2">Tags:</h4> */}
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag, index) => (
                       <Badge key={index} variant="outline" className="text-xs">
