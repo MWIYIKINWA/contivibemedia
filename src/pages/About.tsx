@@ -129,7 +129,7 @@ const values = [
 
 
 
-            <div className="text-xl text-muted-foreground leading-relaxed mt-10 px-16 font-sans text-justify md:text-center">
+            <div className="text-md text-muted-foreground leading-relaxed mt-10 px-16 font-sans text-justify md:text-center">
               <p>From real-time event coverage to cinematic storytelling, 
                       we provide end-to-end visual solutions that elevate brands, celebrate milestones, and document impact. 
                       Our team combines creativity and technical expertise to ensure each moment is professionally captured and 

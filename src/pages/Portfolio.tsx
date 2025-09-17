@@ -120,7 +120,7 @@ const Portfolio = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2 text-center">
                 Creating <span className="text-primary">Impactful Media Content</span>
               </h1>
-              <p className="text-md text-justify text-muted-foreground leading-relaxed font-sans  md:text-center">
+              <p className="text-md mt-10 text-justify text-muted-foreground leading-relaxed font-sans  md:text-center">
               
                   At Contivibe, we deliver innovative digital solutions that engage and empower businesses. From cutting-edge web development to creative content strategies, our services are tailored to help clients thrive in the digital age
               </p>

@@ -70,7 +70,7 @@ const ServiceDetail = () => {
                   {service.title}
                 </h1> */}
                 
-                <div className='font-sans text-justify' dangerouslySetInnerHTML={{ __html: service.description }} />
+                <div className="font-sans text-justify" dangerouslySetInnerHTML={{ __html: service.description }} />
 
 
                 <div className="text-md grid grid-cols-1 gap-6 mb-8">
