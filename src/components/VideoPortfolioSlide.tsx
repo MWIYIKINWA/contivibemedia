@@ -12,6 +12,27 @@ const VideoPortfolioSection = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // latest video
+
+   const [latestVideo, setLatestVideo] = useState<{ videoId: string; title: string } | null>(null);
+
+    useEffect(() => {
+    const getLatestVideo = async () => {
+      try {
+        const videos = await fetchYouTubeVideos();
+        const firstVideo = videos[0];
+        const videoId = firstVideo.id.videoId || firstVideo.id; // fallback if id is not nested
+        const title = firstVideo.snippet.title;
+        setLatestVideo({ videoId, title });
+      } catch (error) {
+        console.error("Failed to fetch YouTube videos:", error);
+      }
+    };
+     getLatestVideo();
+  }, []);
+
+  //.............................
+
   const portfolioImages = [
     {
       src: portfolio1,
@@ -124,7 +145,7 @@ const VideoPortfolioSection = () => {
           </div>
 
           {/* Videos Column */}
-          <div className="grid grid-col-1 md:space-y-6">
+          <div className="grid grid-col-1 md:space-y-3">
    
             
             {/* Videos Side by Side */}
@@ -133,15 +154,11 @@ const VideoPortfolioSection = () => {
               <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
                 <div className="aspect-[9/16] max-h-100 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
     
-    
-                  {/* <iframe
-                    className="w-full h-full"
-                    src="https://youtube.com/shorts/vGm99QPApmM?si=Ha1TSrhPhGFni6BQ"
-                    title="Contivibe Media Shorts"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe> */}
+                {latestVideo ? (
+                  <YoutubeVideo videoId={latestVideo.videoId} title={latestVideo.title}  />
+                ) : (
+                  <p className="text-muted-foreground">Loading latest video...</p>
+                )}
                 </div>
        
               </div>
@@ -171,7 +188,7 @@ const VideoPortfolioSection = () => {
                               ♬ original sound - Contivibe Media
                             </a>
                           </section>
-</blockquote>
+                        </blockquote>
 
                 </div>
               </div>

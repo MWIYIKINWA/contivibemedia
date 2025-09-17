@@ -30,7 +30,7 @@ export const YoutubeVideo: React.FC<VideoProps> = ({ videoId, title }) => (
   <div className="video-responsive mb-6">
     <iframe
       width="100%"
-      height="315"
+      height="450"
       src={`https://www.youtube.com/embed/${videoId}`}
       title={title}
       frameBorder="0"

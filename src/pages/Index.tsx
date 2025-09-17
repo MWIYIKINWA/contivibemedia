@@ -10,8 +10,11 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import VideoPortfolioSection from '@/components/VideoPortfolioSlide';
+import GoogleRatingSection from '@/components/GoogleReview';
+import { useEffect } from 'react';
 
 const Index = () => {
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -25,6 +28,7 @@ const Index = () => {
         <ServicesSection />
         <TeamSection />
         <TestimonialsSection />
+         <GoogleRatingSection/>
         <ClientsSection />
       </main>
       <Footer />
@@ -33,3 +37,5 @@ const Index = () => {
 };
 
 export default Index;
+
+
