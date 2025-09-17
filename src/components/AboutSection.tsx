@@ -21,7 +21,7 @@ const AboutSection = () => {
               </h3>
             </div>
 
-            <div className="space-y-5 text-gray-700 text-md leading-relaxed font-sans">
+            <div className="space-y-5 text-gray-700 text-md leading-relaxed text-justify font-sans">
               <p>
                 Contivibe Media Limited is a content & media production company specializing in creating impactful content for various platforms and capturing moments in Realtime.
               </p>
