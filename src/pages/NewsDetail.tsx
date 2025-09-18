@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User, Eye, ArrowLeft, Share } from 'lucide-react';
+import { Calendar, Clock, User, Eye, ArrowLeft} from 'lucide-react';
 import heroBg from '@/assets/images/header1.webp';
 import { featuredPost, categories, blogPosts } from '@/services/getnews';
 import WhatsAppChat from '@/components/whatsapp';
@@ -12,9 +12,13 @@ import ScrollToTop from '@/components/scroll_to_top';
 import PageHeader from '@/components/ui/PageHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons';
+import Share from '@/components/Share'
+import { Helmet } from 'react-helmet-async';
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
+
+   
   
   // Combine featured post and blog posts to search through all
   const allPosts = [featuredPost, ...blogPosts];
@@ -38,6 +42,20 @@ const NewsDetail = () => {
       </div>
     );
   }
+
+  const shareUrl = `https://contivibemedia.com/news/${post.title}`;
+  // for preview
+      <Helmet>
+       <title>{post.title} | Contivibe Media</title>
+        <meta name="description" content={post.category} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.title} />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:image" content={post.image} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Contivibe Media" />
+      </Helmet>
+    //..................
   
   // Find related posts (same category, excluding current post)
   const relatedPosts = allPosts
@@ -124,6 +142,13 @@ const NewsDetail = () => {
                       </Badge>
                     ))}
                   </div>
+                   <Share
+                      description={post.category}
+                      title={post.title}
+                      url={`https://contivibemedia.com/news/${post.title}`}
+                      image={post.image}
+/>
+
                 </div>
               </div>
             </div>

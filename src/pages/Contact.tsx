@@ -55,7 +55,7 @@ const Contact = () => {
     
     toast({
       title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
+      description: "We will get back to you shortly.",
     });
 
     setFormData({
