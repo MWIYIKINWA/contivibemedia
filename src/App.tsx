@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import ServiceDetail from "./pages/ServiceDetail";
 import NewsDetail from "./pages/NewsDetail";
 import GoToTop from "./components/GoToTop";
+import useBlockMouseEvents from "./components/restrictMouseClicks";
 
 const queryClient = new QueryClient();
 
@@ -32,22 +33,24 @@ const App = () => {
   }, []);
 
   //block mouse right click events
-    useEffect(() => {
-    const blockContextMenu = (e: MouseEvent) => e.preventDefault();
-    const blockKeys = (e: KeyboardEvent) => {
-      if (e.ctrlKey && ['c', 'u'].includes(e.key.toLowerCase())) {
-        e.preventDefault();
-      }
-    };
+  //   useEffect(() => {
+  //   const blockContextMenu = (e: MouseEvent) => e.preventDefault();
+  //   const blockKeys = (e: KeyboardEvent) => {
+  //     if (e.ctrlKey && ['c', 'u'].includes(e.key.toLowerCase())) {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    document.addEventListener('contextmenu', blockContextMenu);
-    document.addEventListener('keydown', blockKeys);
+  //   document.addEventListener('contextmenu', blockContextMenu);
+  //   document.addEventListener('keydown', blockKeys);
 
-    return () => {
-      document.removeEventListener('contextmenu', blockContextMenu);
-      document.removeEventListener('keydown', blockKeys);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener('contextmenu', blockContextMenu);
+  //     document.removeEventListener('keydown', blockKeys);
+  //   };
+  // }, []);
+
+  useBlockMouseEvents();
 
   return (
     <QueryClientProvider client={queryClient}>
