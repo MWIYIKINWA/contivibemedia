@@ -45,7 +45,7 @@ const GoogleRatingSection = () => {
   };
 
   return (
-    <section className="py-4 lg:py-2 bg-background font-roboto">
+    <section className="py-4 lg:py-2 bg-background font-roboto my-10">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-2">
@@ -100,9 +100,9 @@ const GoogleRatingSection = () => {
             </Button>
           </div>
 
-         <div className="my-10 mx-10">
+         {/* <div className="my-10 mx-10">
             <GoogleReviewsWidget instanceId="MA1CjXyxV7VHlHySq1t6" />
-         </div>
+         </div> */}
 
         </div>
 

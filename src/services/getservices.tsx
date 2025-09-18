@@ -177,29 +177,7 @@ and creative edge to launch confidently and keep your audience coming back for m
 }
 
 
-    // {
-    //   id: 7,
-    //   title: 'Public Relations & Strategy Visibility',
-    //   description: `We help businesses build a positive image and manage their reputation. This includes creating communication plans, writing press releases, and handling media relations to ensure that the public views the brand in a favourable way.`,
-    //   icon: Users,
-    //   image: publiceImg,
-    //   features: ['Build and maintain a positive reputation',
-    //               'Secure media coverage and visibility.',
-    //               'Cultivate key relationships.',
-    //               'Effectively manage crises.',
-    //               'Drive business growth through targeted communication.']
-    // },
-//     {
-//       id: 8,
-//       title: 'Events Marketing & Visibility',
-//       description:`We Promote events to attract more attendees and ensure they are visible to the right audience. This includes online promotions, creating marketing materials, and managing event visibility across different channels.`,
-//       icon: TrendingUp,
-//       image: eventsimg,
-//       features: ['Create memorable events.',
-// 'Increase brand awareness and engagement.',
-// 'Drive business growth.',
-// 'Build strategic partnerships.',
-// 'Measure event success.']
-//     },
+    
+
  
   ];

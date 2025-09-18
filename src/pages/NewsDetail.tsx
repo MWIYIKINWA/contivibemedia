@@ -10,6 +10,8 @@ import { featuredPost, categories, blogPosts } from '@/services/getnews';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import PageHeader from '@/components/ui/PageHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -61,16 +63,27 @@ const NewsDetail = () => {
       />
 
       <main>
+        {/* STRIP.......................... */}
+        <div className="py-4 bg-primary text-white flex justify-between font-roboto">
+          <div className="flex ml-10 space-x-2">
+            <FontAwesomeIcon icon={faNewspaper} className='text-2xl '/>
+            <h6>Contivibe Media</h6>
+          </div>
+          <div className="flex mr-10 space-x-2">
+            <FontAwesomeIcon icon={faCalendar} className='text-2xl ' />
+            <h6>{post.date}</h6>
+          </div>
+        </div>
         {/* Article Content */}
-        <section className="py-12 font-roboto">
+        <section className="py-5 font-roboto">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
-              <Button variant="outline" asChild className="mb-8">
+              {/* <Button variant="outline" asChild className="mb-8">
                 <Link to="/store-news">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to News
                 </Link>
-              </Button>
+              </Button> */}
               
               <div className="mb-8">
                 <img 
@@ -85,7 +98,7 @@ const NewsDetail = () => {
                 <Badge variant="secondary" className='bg-primary text-white'>
                     By {post.author}
                   </Badge>
-                  <small className='font-sans'>{post.date}</small>
+                  <small className='font-sans'>{post.readTime}</small>
                 </div>
               </div>
               

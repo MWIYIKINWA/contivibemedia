@@ -54,25 +54,31 @@ const values = [
     {
       id: 1,
       title: 'Creativity',
-      description: 'We embrace innovative ideas in all our projects',
+      description: 'We embrace bold, innovative ideas in every project, turning imagination into powerful stories that inspire action.',
       color: 'bg-primary text-white'
     },
     {
       id: 2, 
       title: 'Positivity',
-      description: 'We foster a positive and energetic environment that reflects in our content',
+      description: 'We cultivate a collaborative and energetic team culture that fuels excellence and reflects in everything we deliver.',
       color: 'bg-red-50 text-red-600 dark:bg-red-950/20 dark:text-red-400'
     },
     {
       id: 3,
       title: 'Authenticity',
-      description: 'We capture genuine moments that truly connects with our audience',
+      description: 'We tell real stories and capture genuine moments that truly connect with audiences and build trust.',
       color: 'bg-primary text-white'
     },
     {
       id: 4,
       title: 'Impact',
-      description: 'We aim to produce media that leaves a lasting impression and engages viewers on a deeper level'
+      description: 'We create content that doesn’t just look good—it leaves a lasting impression, drives growth, and empowers communities'
+    },
+    {
+      id: 5,
+      title: 'Integrity, Trust & Excellence',
+      description: 'We are committed to professionalism, transparency, and delivering work of the highest standard.',
+      color: 'bg-primary text-white'
     }
   ];
 
@@ -191,11 +197,11 @@ positivity, and ability to provoke specific energy through our work.
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto px-4 font-roboto">
           {values.map((value, index) => (
             <Card 
               key={value.id}
-              className={`group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm text-center ${value.color}`}
+              className={`group hover-lift border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm text-center ${value.color}   w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] max-w-sm`}
               style={{
                 animationDelay: `${index * 0.1}s`
               }}

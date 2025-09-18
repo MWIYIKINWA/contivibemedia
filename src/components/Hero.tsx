@@ -31,14 +31,14 @@ const {isPlaying, toggleRadio} = useRadio();
             Ready for a content partner who moves fast and delivers results?
           </p>
 
-            <h6 className="text-3xl md:text-5xl lg:text-6xl  mb-6 animate-fade-up  font-keanutty mt-5" >
+            <h6 className="text-2xl md:text-3xl lg:text-4xl  mb-6 animate-fade-up  font-keanutty mt-5" >
             We  Capture Moments <span className="font-kaushan">&amp;</span> {' '}
              <TypingAnimation 
               text="Transform them into Brand Impact" 
               speed={100}
               delay={800}
               infinite={true}
-              className="text-gradient-red bg-gradient-to-r from-white to-brand-red-hover bg-clip-text text-transparent"
+              className="text-primary bg-gradient-to-r from-white to-brand-red-hover bg-clip-text text-primary"
             />
           </h6>
 

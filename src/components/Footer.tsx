@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
             
             <p className="text-background/80 mb-6 leading-relaxed font-sans">
-              We blend creativity and positivity to produce moments, content full of energy, reflecting our mission to produce engaging and impactful media.
+              We exist to transform moments into brand impact. We capture, create, and amplify stories with creativity, authenticity, and excellence, delivering world-class media solutions that inspire audiences, elevate brands, and empower communities.
             </p>
             
             {/* Social Media Links */}

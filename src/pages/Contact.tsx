@@ -20,6 +20,7 @@ import { useToast } from '@/hooks/use-toast';
 import heroBg from '@/assets/images/header1.webp';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
+import { services } from '@/services/getservices';
 
 const Contact = () => {
   const breadcrumbs = [
@@ -89,16 +90,7 @@ const Contact = () => {
   
   ];
 
-  const services = [
-    'Content Marketing & Strategy',
-    'Events & Products Photography',
-    'Livestreaming & Videography',
-    'TVCs & Motion Videos',
-    'Short Videos & Documentaries',
-    'Digital, Content & Strategy',
-    'Public Relations & Strategy',
-    'Production for Business Growth'
-  ];
+  const services_ = services.map(service => service.title);
 
   return (
     <div className="min-h-screen">
@@ -206,7 +198,7 @@ const Contact = () => {
                             className="mt-2 w-full px-3 py-2 border border-border rounded-md bg-background text-foreground"
                           >
                             <option value="">Select a service</option>
-                            {services.map((service) => (
+                            {services_.map((service) => (
                               <option key={service} value={service}>{service}</option>
                             ))}
                           </select>
@@ -315,7 +307,7 @@ const Contact = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
                 <p className="text-muted-foreground">
-                  Get quick answers to common questions about our services and process.
+                  Get quick answers to common questions about our services_ and process.
                 </p>
               </div>
 
@@ -335,7 +327,7 @@ const Contact = () => {
                   },
                   {
                     question: "Do you provide ongoing content support?",
-                    answer: "Absolutely! We offer ongoing content management, social media support, and maintenance services to keep your content fresh and engaging."
+                    answer: "Absolutely! We offer ongoing content management, social media support, and maintenance services_ to keep your content fresh and engaging."
                   }
                 ].map((faq, index) => (
                   <Card key={index} className="border-0 shadow-lg bg-card/50 backdrop-blur-sm">

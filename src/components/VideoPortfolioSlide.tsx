@@ -6,6 +6,8 @@ import portfolio2 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 
 import portfolio3 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
 import portfolio4 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
 import { fetchYouTubeVideos, YoutubeVideo } from '@/services/getYoutubeVideos';
+import thumb1 from '@/assets/images/thumbnails/black.png';
+import thumb2 from '@/assets/images/thumbnails/utube.png';
 
 const VideoPortfolioSection = () => {
 
@@ -67,13 +69,15 @@ const VideoPortfolioSection = () => {
     setCurrentSlide((prev) => (prev - 1 + portfolioImages.length) % portfolioImages.length);
   };
 
-  useEffect(() => {
+
+useEffect(() => {
   const script = document.createElement('script');
   script.src = 'https://www.tiktok.com/embed.js';
   script.async = true;
   document.body.appendChild(script);
 }, []);
 
+  //---------------------------------------------
 
   return (
     <section className="py-10 bg-muted/30">
@@ -157,14 +161,54 @@ const VideoPortfolioSection = () => {
                 {latestVideo ? (
                   <YoutubeVideo videoId={latestVideo.videoId} title={latestVideo.title}  />
                 ) : (
-                  <p className="text-muted-foreground">Loading latest video...</p>
+                  <img src={thumb2} alt="Latest Video...." className=''  />
                 )}
                 </div>
        
               </div>
 
-              {/* TikTok Video */}
-              <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
+              {/* tiktok .................................*/}
+
+    {/* <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift bg-foreground">
+      <div className="aspect-[9/16] max-h-96 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
+        
+          <blockquote
+            className="tiktok-embed"
+            cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
+            data-video-id="7478755829672348983"
+            style={{ maxWidth: '605px', minWidth: '325px' }}
+          >
+            <section>
+              <a
+                target="_blank"
+                title=""
+                href="https://www.tiktok.com/@contivibemedia?refer=embed"
+              ></a>{" "}
+              Let's do it for you @Pearl Liquors{" "}
+              <a
+                target="_blank"
+                title="♬ original sound - Contivibe Media"
+                href="https://www.tiktok.com/music/original-sound-7478755868872952582?refer=embed"
+              >
+                ♬ original sound - Contivibe Media
+              </a>
+            </section>
+          </blockquote>
+      
+          <div className=" bg-foreground">
+            <img
+              src={thumb1}
+              alt="TikTok Video"
+              className='h-full w-full'
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+              <Play className="w-16 h-16 text-white opacity-90" />
+            </div>
+          </div>
+        
+      </div>
+    </div> */}
+      <div className="flex-1 relative bg-card rounded-2xl shadow-lg overflow-hidden group hover-lift">
                 <div className="aspect-[9/16] max-h-96 bg-gradient-to-br from-muted to-muted-foreground/10 flex items-center justify-center">
                  <blockquote
                         className="tiktok-embed"
@@ -192,6 +236,8 @@ const VideoPortfolioSection = () => {
 
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>

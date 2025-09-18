@@ -27,9 +27,9 @@ const Index = () => {
         <WhyChooseUsSection/>
         <ServicesSection />
         <TeamSection />
-        <TestimonialsSection />
          <GoogleRatingSection/>
-        <ClientsSection />
+        <TestimonialsSection />
+         <ClientsSection />
       </main>
       <Footer />
     </div>
