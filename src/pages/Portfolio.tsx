@@ -9,18 +9,19 @@ import heroBg from '@/assets/images/header1.webp';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
-import im1 from '../assets/images/photos/image-1-thumb.webp'
-import im2 from '../assets/images/photos/image-11-thumb.webp'
-import im3 from '../assets/images/photos/image-12-thumb.webp'
-import im4 from '../assets/images/photos/image-13-thumb.webp'
-import im5 from '../assets/images/photos/image-14-thumb.webp'
-import im6 from '../assets/images/photos/image-15-thumb.webp'
-import im7 from '../assets/images/photos/image-16-thumb.webp'
-import im8 from '../assets/images/photos/image-17-thumb.webp'
-import im9 from '../assets/images/photos/image-18-thumb.webp'
-import im10 from '../assets/images/photos/image-19-thumb.webp'
-import im11 from '../assets/images/photos/image-2-thumb.webp'
-import im12 from '../assets/images/photos/image-20-thumb.webp'
+import im1 from '../assets/images/slide_port/1.webp'
+import im2 from '../assets/images/slide_port/2.webp'
+import im3 from '../assets/images/slide_port/3.webp'
+import im4 from '../assets/images/slide_port/4.webp'
+import im5 from '../assets/images/slide_port/5.webp'
+import im6 from '../assets/images/slide_port/6.webp'
+import im7 from '../assets/images/slide_port/7.webp'
+import im8 from '../assets/images/slide_port/8.webp'
+import im9 from '../assets/images/slide_port/9.jpeg'
+import im10 from '../assets/images/slide_port/10.jpeg'
+import im11 from '../assets/images/slide_port/11.webp'
+import im12 from '../assets/images/slide_port/12.webp'
+import im13 from '../assets/images/slide_port/13.jpeg'
 import { Link } from 'react-router-dom';
 import { fetchYouTubeVideos, YoutubeVideo } from "../services/getYoutubeVideos";
 
@@ -33,7 +34,7 @@ const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    const [videos, setVideos] = useState<any[]>([]);
+  const [videos, setVideos] = useState<any[]>([]);
 
   useEffect(() => {
     const loadVideos = async () => {
@@ -95,6 +96,7 @@ const Portfolio = () => {
       id: 12,
       image: im12,
     },
+  
  
  
   ];

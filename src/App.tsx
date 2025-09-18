@@ -32,23 +32,6 @@ const App = () => {
     });
   }, []);
 
-  //block mouse right click events
-  //   useEffect(() => {
-  //   const blockContextMenu = (e: MouseEvent) => e.preventDefault();
-  //   const blockKeys = (e: KeyboardEvent) => {
-  //     if (e.ctrlKey && ['c', 'u'].includes(e.key.toLowerCase())) {
-  //       e.preventDefault();
-  //     }
-  //   };
-
-  //   document.addEventListener('contextmenu', blockContextMenu);
-  //   document.addEventListener('keydown', blockKeys);
-
-  //   return () => {
-  //     document.removeEventListener('contextmenu', blockContextMenu);
-  //     document.removeEventListener('keydown', blockKeys);
-  //   };
-  // }, []);
 
   useBlockMouseEvents();
 

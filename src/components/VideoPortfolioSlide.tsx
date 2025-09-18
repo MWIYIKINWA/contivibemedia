@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import portfolio1 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.40 PM (1).jpeg';
-import portfolio2 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.03.42 PM.jpeg';
-import portfolio3 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
-import portfolio4 from '@/assets/images/slide_port/WhatsApp Image 2025-09-12 at 3.11.56 PM.jpeg';
+import portfolio1 from '@/assets/images/slide_port/1.webp';
+import portfolio2 from '@/assets/images/slide_port/2.webp';
+import portfolio3 from '@/assets/images/slide_port/3.webp';
+import portfolio4 from '@/assets/images/slide_port/4.webp';
+import portfolio5 from '@/assets/images/slide_port/5.webp';
+import portfolio6 from '@/assets/images/slide_port/6.webp';
+import portfolio7 from '@/assets/images/slide_port/7.webp';
+import portfolio8 from '@/assets/images/slide_port/8.webp';
+import portfolio9 from '@/assets/images/slide_port/9.jpeg';
+import portfolio10 from '@/assets/images/slide_port/10.jpeg';
+import portfolio11 from '@/assets/images/slide_port/11.webp';
+import portfolio12 from '@/assets/images/slide_port/12.webp';
+import portfolio13 from '@/assets/images/slide_port/13.jpeg';
+
+
 import { fetchYouTubeVideos, YoutubeVideo } from '@/services/getYoutubeVideos';
 import thumb1 from '@/assets/images/thumbnails/black.png';
 import thumb2 from '@/assets/images/thumbnails/utube.png';
@@ -43,14 +54,65 @@ const VideoPortfolioSection = () => {
     },
     {
       src: portfolio2,
-      title: 'Cancer run',
-      description: '2024'
+      title: 'Roofings Factory',
+      description: 'Tour'
     },
     {
       src: portfolio3,
+      title: 'Nina Mugerwa',
+      description: 'Live recording Concert'
+    },
+       {
+      src: portfolio4,
+      title: 'Kabaka Birthday Run Routes Launch',
+      description: '2025'
+    },
+       {
+      src: portfolio5,
+      title: 'Inaugural Marketers Golf',
+      description: 'Tournament'
+    },
+       {
+      src: portfolio6,
+      title: 'Inaugural Marketers Golf',
+      description: 'Tournament'
+    },
+       {
+      src: portfolio7,
+      title: 'HR to Non HR',
+      description: 'Workshop'
+    },
+       {
+      src: portfolio8,
+      title: 'NBL',
+      description: 'Brand pack'
+    },
+       {
+      src: portfolio9,
+      title: 'Inaugural Marketers Golf',
+      description: 'Tournament'
+    },
+       {
+      src: portfolio10,
+      title: 'Cancer Run',
+      description: '2024'
+    },
+       {
+      src: portfolio11,
+      title: 'CEO Summit',
+      description: 'Workshop'
+    },
+       {
+      src: portfolio12,
+      title: 'CEO Summit',
+      description: 'Workshop'
+    },
+        {
+      src: portfolio13,
       title: 'Uganda Airlines CEO Jennifer Bamuturaki',
       description: 'CEO Workshop'
     },
+    
   ];
 
   useEffect(() => {
