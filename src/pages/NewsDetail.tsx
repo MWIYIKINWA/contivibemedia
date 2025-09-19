@@ -94,7 +94,7 @@ const NewsDetail = () => {
         <div className="py-4 bg-primary text-white flex justify-between font-roboto">
           <div className="flex ml-10 space-x-2">
             <FontAwesomeIcon icon={faNewspaper} className='text-2xl '/>
-            <h6>Contivibe Media</h6>
+            <h6>Contivibe Media cha</h6>
           </div>
           <div className="flex mr-10 space-x-2">
             <FontAwesomeIcon icon={faCalendar} className='text-2xl ' />
