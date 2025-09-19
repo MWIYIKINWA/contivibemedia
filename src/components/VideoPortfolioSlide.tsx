@@ -269,14 +269,14 @@ useEffect(() => {
         {/* mobile videos */}
 
         <div className="grid md:hidden">
-           <div className="mx-5 my-2">
+           <div className="my-2">
                   {latestVideo ? (
                   <YoutubeVideo videoId={latestVideo.videoId} title={latestVideo.title}  />
                 ) : (
                   <img src={thumb2} alt="Latest Video...." className=''  />
                 )}
            </div>
-            <div className="mx-5 my-2">
+            <div className="my-2">
                                 <blockquote
                         className="tiktok-embed"
                         cite="https://www.tiktok.com/@contivibemedia/video/7478755829672348983"
