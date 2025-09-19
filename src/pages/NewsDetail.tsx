@@ -50,19 +50,7 @@ const NewsDetail = () => {
           ? post.image
           : `${baseUrl}${post.image}`;
 
-  // for preview
- <Helmet>
-  <title>{post.title} | Contivibe Media</title>
-  <meta name="description" content={post.category} />
-  <meta property="og:title" content={post.title} />
-  <meta property="og:description" content={post.title} />
-  <meta property="og:url" content={shareUrl} />
-  <meta property="og:image" content={imageUrl} />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Contivibe Media" />
-</Helmet>
 
-    //..................
   
   // Find related posts (same category, excluding current post)
   const relatedPosts = allPosts
@@ -79,6 +67,20 @@ const NewsDetail = () => {
       <Header />
       <WhatsAppChat />
       <ScrollToTop />
+
+        {/* // for preview */}
+        <Helmet>
+          <title>{post.title} | Contivibe Media</title>
+          <meta name="description" content={post.category} />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={post.title} />
+          <meta property="og:url" content={shareUrl} />
+          <meta property="og:image" content={imageUrl} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Contivibe Media" />
+        </Helmet>
+
+    {/* //.................. */}
       
       {/* Page Header */}
           <PageHeader 
