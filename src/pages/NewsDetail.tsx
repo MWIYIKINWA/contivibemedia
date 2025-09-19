@@ -43,18 +43,25 @@ const NewsDetail = () => {
     );
   }
 
-  const shareUrl = `https://contivibemedia.com/news/${post.title}`;
+ 
+        const baseUrl = "https://contivibemedia.com"; 
+        const shareUrl = `${baseUrl}/news/${post.title}`;
+        const imageUrl = post.image.startsWith("http")
+          ? post.image
+          : `${baseUrl}${post.image}`;
+
   // for preview
-      <Helmet>
-       <title>{post.title} | Contivibe Media</title>
-        <meta name="description" content={post.category} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.title} />
-        <meta property="og:url" content={shareUrl} />
-        <meta property="og:image" content={post.image} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Contivibe Media" />
-      </Helmet>
+ <Helmet>
+  <title>{post.title} | Contivibe Media</title>
+  <meta name="description" content={post.category} />
+  <meta property="og:title" content={post.title} />
+  <meta property="og:description" content={post.title} />
+  <meta property="og:url" content={shareUrl} />
+  <meta property="og:image" content={imageUrl} />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Contivibe Media" />
+</Helmet>
+
     //..................
   
   // Find related posts (same category, excluding current post)
