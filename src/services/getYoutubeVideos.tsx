@@ -4,7 +4,7 @@ import React from "react";
 import axios from "axios";
 
 // --- YouTube API Service ---
-const API_KEY = "AIzaSyAIcJodumtr8EeKC8_orDeS9wHAH4OLsaE";
+const API_KEY = "AIzaSyBOxJ3R8cv5GqoJLhrRwwogxt8PU13zfkE";
 const CHANNEL_ID = "UCc6V0gWWjfnN28lLiNYze2A";
 
 export const fetchYouTubeVideos = async () => {
