@@ -44,7 +44,7 @@ const NewsDetail = () => {
   }
 
  
-        const baseUrl = "https://contivibemedia.com"; 
+        const baseUrl = "https://contivibemedia.netlify.app"; 
         const shareUrl = `${baseUrl}/news/${post.title}`;
         const imageUrl = post.image.startsWith("http")
           ? post.image
