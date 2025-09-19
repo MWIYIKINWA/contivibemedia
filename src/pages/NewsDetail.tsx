@@ -4,27 +4,24 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, User, Eye, ArrowLeft} from 'lucide-react';
+import { Calendar, ArrowLeft } from 'lucide-react';
 import heroBg from '@/assets/images/header1.webp';
 import { featuredPost, categories, blogPosts } from '@/services/getnews';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import PageHeader from '@/components/ui/PageHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons';
-import Share from '@/components/Share'
+import { faCalendar, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import Share from '@/components/Share';
 import { Helmet } from 'react-helmet-async';
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
 
-   
-  
-  // Combine featured post and blog posts to search through all
+  // Combine featured and blog posts
   const allPosts = [featuredPost, ...blogPosts];
   const post = allPosts.find(p => p.id.toString() === id);
-  
-  // If post not found, show error message
+
   if (!post) {
     return (
       <div className="min-h-screen">
@@ -33,7 +30,9 @@ const NewsDetail = () => {
         <ScrollToTop />
         <div className="container-custom py-20 text-center">
           <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
-          <p className="text-muted-foreground mb-6">The article you're looking for doesn't exist.</p>
+          <p className="text-muted-foreground mb-6">
+            The article you're looking for doesn't exist.
+          </p>
           <Button asChild>
             <Link to="/news">Back to News</Link>
           </Button>
@@ -43,20 +42,17 @@ const NewsDetail = () => {
     );
   }
 
- 
-        const baseUrl = "https://contivibemedia.netlify.app"; 
-        const shareUrl = `${baseUrl}/news/${post.title}`;
-        const imageUrl = post.image.startsWith("http")
-          ? post.image
-          : `${baseUrl}${post.image}`;
+  // ✅ Fix: put constants inside function scope, not JSX
+  const baseUrl = "https://contivibemedia.netlify.app";
+  const shareUrl = `${baseUrl}/news/${post.title}`;
+  const imageUrl = post.image.startsWith("http")
+    ? post.image
+    : `${baseUrl}${post.image}`;
 
-
-  
-  // Find related posts (same category, excluding current post)
   const relatedPosts = allPosts
     .filter(p => p.id !== post.id && p.category === post.category)
     .slice(0, 3);
-  
+
   const breadcrumbs = [
     { name: 'Home', href: '/' },
     { name: 'Sector News', href: '/store-news' },
@@ -68,53 +64,46 @@ const NewsDetail = () => {
       <WhatsAppChat />
       <ScrollToTop />
 
-        {/* // for preview */}
-        <Helmet>
-          <title>{post.title} | Contivibe Media</title>
-          <meta name="description" content={post.category} />
-          <meta property="og:title" content={post.title} />
-          <meta property="og:description" content={post.title} />
-          <meta property="og:url" content={shareUrl} />
-          <meta property="og:image" content={imageUrl} />
-          <meta property="og:type" content="article" />
-          <meta property="og:site_name" content="Contivibe Media" />
-        </Helmet>
+      {/* ✅ Helmet inside return */}
+      <Helmet>
+        <title>{post.title} | Contivibe Media</title>
+        <meta name="description" content={post.category} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.title} />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Contivibe Media" />
+      </Helmet>
 
-    {/* //.................. */}
-      
       {/* Page Header */}
-          <PageHeader 
-        title={post.title} 
+      <PageHeader
+        title={post.title}
         breadcrumbs={breadcrumbs}
         backgroundImage={heroBg}
       />
 
       <main>
-        {/* STRIP.......................... */}
+        {/* STRIP */}
         <div className="py-4 bg-primary text-white flex justify-between font-roboto">
           <div className="flex ml-10 space-x-2">
-            <FontAwesomeIcon icon={faNewspaper} className='text-2xl '/>
-            <h6>Contivibe Media cha</h6>
+            <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
+            <h6>Contivibe Media</h6>
           </div>
           <div className="flex mr-10 space-x-2">
-            <FontAwesomeIcon icon={faCalendar} className='text-2xl ' />
+            <FontAwesomeIcon icon={faCalendar} className="text-2xl" />
             <h6>{post.date}</h6>
           </div>
         </div>
+
         {/* Article Content */}
         <section className="py-5 font-roboto">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
-              {/* <Button variant="outline" asChild className="mb-8">
-                <Link to="/store-news">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to News
-                </Link>
-              </Button> */}
-              
+              {/* Article image + meta */}
               <div className="mb-8">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-64 md:h-96 object-cover rounded-lg"
                 />
@@ -122,28 +111,22 @@ const NewsDetail = () => {
                   <Badge variant="secondary">
                     {categories.find(cat => cat.id === post.category)?.name}
                   </Badge>
-                <Badge variant="secondary" className='bg-primary text-white'>
+                  <Badge variant="secondary" className="bg-primary text-white">
                     By {post.author}
                   </Badge>
-                  <small className='font-sans'>{post.readTime}</small>
+                  <small className="font-sans">{post.readTime}</small>
                 </div>
               </div>
-              
+
+              {/* Article body */}
               <div className="prose max-w-none">
-                <div className="text-lg mb-6 leading-relaxed text-sm text-justify" dangerouslySetInnerHTML={{__html: post.excerpt}} />
-                 
-                
-                
-                {/* In a real app, this would be the full content from the post */}
-                <div className="space-y-4">
-                  {/* <p>
-                    In today's fast-paced digital world, non-governmental organizations (NGOs) face an increasingly complex challenge: how to effectively reach their target audiences, inspire action, and secure funding to support their mission. The solution lies in strategic media engagement that amplifies your message and extends your reach.
-                  </p> */}
-                </div>
-                
-                {/* Tags */}
+                <div
+                  className="text-lg mb-6 leading-relaxed text-sm text-justify"
+                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                />
+
+                {/* Tags + Share */}
                 <div className="mt-8 pt-6 border-t">
-                  {/* <h4 className="text-sm font-medium mb-2">Tags:</h4> */}
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag, index) => (
                       <Badge key={index} variant="outline" className="text-xs">
@@ -151,61 +134,65 @@ const NewsDetail = () => {
                       </Badge>
                     ))}
                   </div>
-                   <Share
-                      description={post.category}
-                      title={post.title}
-                      url={`https://contivibemedia.com/news/${post.title}`}
-                      image={post.image}
-/>
 
+                  <Share
+                    description={post.category}
+                    title={post.title}
+                    url={shareUrl}
+                    image={imageUrl}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Related Articles */}
-        {/* {relatedPosts.length > 0 && (
+        {/* Related Articles (optional, kept commented out) */}
+        {/* 
+        {relatedPosts.length > 0 && (
           <section className="py-12 bg-muted/30 font-roboto">
             <div className="container-custom">
               <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedPosts.map(relatedPost => (
-                  <Link to={`/news/${relatedPost.id}`}>
-                                    <Card key={relatedPost.id} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                    <img 
-                      src={relatedPost.image} 
-                      alt={relatedPost.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardContent className="p-4">
-                      <div className="flex items-center text-xs text-muted-foreground mb-2">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {new Date(relatedPost.date).toLocaleDateString()}
-                      </div>
-                      <h3 className="font-bold mb-2 line-clamp-2">
-                        {relatedPost.title}
-                      </h3>
-                      <div className="text-sm text-muted-foreground mb-4 line-clamp-2" dangerouslySetInnerHTML={{__html:
+                  <Link to={`/news/${relatedPost.id}`} key={relatedPost.id}>
+                    <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                      <img
+                        src={relatedPost.image}
+                        alt={relatedPost.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <CardContent className="p-4">
+                        <div className="flex items-center text-xs text-muted-foreground mb-2">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {new Date(relatedPost.date).toLocaleDateString()}
+                        </div>
+                        <h3 className="font-bold mb-2 line-clamp-2">
+                          {relatedPost.title}
+                        </h3>
+                        <div
+                          className="text-sm text-muted-foreground mb-4 line-clamp-2"
+                          dangerouslySetInnerHTML={{
+                            __html:
                               relatedPost.excerpt.length > 100
-                          ? relatedPost.excerpt.slice(0, 100) + "..."
-                         : relatedPost.excerpt
-                      }} />
-                        
-                      
-                      <Button asChild variant="outline" size="sm">
-                        <Link to={`/news/${relatedPost.id}`}>
-                          Read More
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                                ? relatedPost.excerpt.slice(0, 100) + "..."
+                                : relatedPost.excerpt,
+                          }}
+                        />
+                        <Button asChild variant="outline" size="sm">
+                          <Link to={`/news/${relatedPost.id}`}>
+                            Read More
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
                   </Link>
                 ))}
               </div>
             </div>
           </section>
-        )} */}
+        )} 
+        */}
       </main>
 
       <Footer />
@@ -214,3 +201,221 @@ const NewsDetail = () => {
 };
 
 export default NewsDetail;
+
+
+
+// import { useParams, Link } from 'react-router-dom';
+// import Header from '@/components/Header';
+// import Footer from '@/components/Footer';
+// import { Card, CardContent } from '@/components/ui/card';
+// import { Button } from '@/components/ui/button';
+// import { Badge } from '@/components/ui/badge';
+// import { Calendar, Clock, User, Eye, ArrowLeft} from 'lucide-react';
+// import heroBg from '@/assets/images/header1.webp';
+// import { featuredPost, categories, blogPosts } from '@/services/getnews';
+// import WhatsAppChat from '@/components/whatsapp';
+// import ScrollToTop from '@/components/scroll_to_top';
+// import PageHeader from '@/components/ui/PageHeader';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendar, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons';
+// import Share from '@/components/Share'
+// import { Helmet } from 'react-helmet-async';
+
+// const NewsDetail = () => {
+//   const { id } = useParams<{ id: string }>();
+
+   
+  
+//   // Combine featured post and blog posts to search through all
+//   const allPosts = [featuredPost, ...blogPosts];
+//   const post = allPosts.find(p => p.id.toString() === id);
+  
+//   // If post not found, show error message
+//   if (!post) {
+//     return (
+//       <div className="min-h-screen">
+//         <Header />
+//         <WhatsAppChat />
+//         <ScrollToTop />
+//         <div className="container-custom py-20 text-center">
+//           <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
+//           <p className="text-muted-foreground mb-6">The article you're looking for doesn't exist.</p>
+//           <Button asChild>
+//             <Link to="/news">Back to News</Link>
+//           </Button>
+//         </div>
+//         <Footer />
+//       </div>
+//     );
+//   }
+
+//    const baseUrl = "https://contivibemedia.netlify.app"; 
+//    const shareUrl = `${baseUrl}/news/${post.title}`;
+//   const imageUrl = post.image.startsWith("http")
+//           ? post.image
+//           : `${baseUrl}${post.image}`;
+
+
+// // Find related posts (same category, excluding current post)
+//   const relatedPosts = allPosts
+//     .filter(p => p.id !== post.id && p.category === post.category)
+//     .slice(0, 3);
+  
+//   const breadcrumbs = [
+//     { name: 'Home', href: '/' },
+//     { name: 'Sector News', href: '/store-news' },
+//   ];
+
+//   return (
+//     <div className="min-h-screen">
+//       <Header />
+//       <WhatsAppChat />
+//       <ScrollToTop />
+
+//         {/* // for preview */}
+//         <Helmet>
+//           <title>{post.title} | Contivibe Media</title>
+//           <meta name="description" content={post.category} />
+//           <meta property="og:title" content={post.title} />
+//           <meta property="og:description" content={post.title} />
+//           <meta property="og:url" content={shareUrl} />
+//           <meta property="og:image" content={imageUrl} />
+//           <meta property="og:type" content="article" />
+//           <meta property="og:site_name" content="Contivibe Media" />
+//         </Helmet>
+
+//     {/* //.................. */}
+      
+//       {/* Page Header */}
+//           <PageHeader 
+//         title={post.title} 
+//         breadcrumbs={breadcrumbs}
+//         backgroundImage={heroBg}
+//       />
+
+//       <main>
+//         {/* STRIP.......................... */}
+//         <div className="py-4 bg-primary text-white flex justify-between font-roboto">
+//           <div className="flex ml-10 space-x-2">
+//             <FontAwesomeIcon icon={faNewspaper} className='text-2xl '/>
+//             <h6>Contivibe Media cha</h6>
+//           </div>
+//           <div className="flex mr-10 space-x-2">
+//             <FontAwesomeIcon icon={faCalendar} className='text-2xl ' />
+//             <h6>{post.date}</h6>
+//           </div>
+//         </div>
+//         {/* Article Content */}
+//         <section className="py-5 font-roboto">
+//           <div className="container-custom">
+//             <div className="max-w-3xl mx-auto">
+//               {/* <Button variant="outline" asChild className="mb-8">
+//                 <Link to="/store-news">
+//                   <ArrowLeft className="w-4 h-4 mr-2" />
+//                   Back to News
+//                 </Link>
+//               </Button> */}
+              
+//               <div className="mb-8">
+//                 <img 
+//                   src={post.image} 
+//                   alt={post.title}
+//                   className="w-full h-64 md:h-96 object-cover rounded-lg"
+//                 />
+//                 <div className="mt-4 flex items-center justify-between">
+//                   <Badge variant="secondary">
+//                     {categories.find(cat => cat.id === post.category)?.name}
+//                   </Badge>
+//                 <Badge variant="secondary" className='bg-primary text-white'>
+//                     By {post.author}
+//                   </Badge>
+//                   <small className='font-sans'>{post.readTime}</small>
+//                 </div>
+//               </div>
+              
+//               <div className="prose max-w-none">
+//                 <div className="text-lg mb-6 leading-relaxed text-sm text-justify" dangerouslySetInnerHTML={{__html: post.excerpt}} />
+                 
+                
+                
+//                 {/* In a real app, this would be the full content from the post */}
+//                 <div className="space-y-4">
+//                   {/* <p>
+//                     In today's fast-paced digital world, non-governmental organizations (NGOs) face an increasingly complex challenge: how to effectively reach their target audiences, inspire action, and secure funding to support their mission. The solution lies in strategic media engagement that amplifies your message and extends your reach.
+//                   </p> */}
+//                 </div>
+                
+//                 {/* Tags */}
+//                 <div className="mt-8 pt-6 border-t">
+//                   {/* <h4 className="text-sm font-medium mb-2">Tags:</h4> */}
+//                   <div className="flex flex-wrap gap-2">
+//                     {post.tags.map((tag, index) => (
+//                       <Badge key={index} variant="outline" className="text-xs">
+//                         {tag}
+//                       </Badge>
+//                     ))}
+//                   </div>
+//                    <Share
+//                       description={post.category}
+//                       title={post.title}
+//                       url={`https://contivibemedia.com/news/${post.title}`}
+//                       image={post.image}
+// />
+
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* Related Articles */}
+//         {/* {relatedPosts.length > 0 && (
+//           <section className="py-12 bg-muted/30 font-roboto">
+//             <div className="container-custom">
+//               <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
+//               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//                 {relatedPosts.map(relatedPost => (
+//                   <Link to={`/news/${relatedPost.id}`}>
+//                                     <Card key={relatedPost.id} className="border-0 shadow-md hover:shadow-lg transition-shadow">
+//                     <img 
+//                       src={relatedPost.image} 
+//                       alt={relatedPost.title}
+//                       className="w-full h-48 object-cover"
+//                     />
+//                     <CardContent className="p-4">
+//                       <div className="flex items-center text-xs text-muted-foreground mb-2">
+//                         <Calendar className="w-3 h-3 mr-1" />
+//                         {new Date(relatedPost.date).toLocaleDateString()}
+//                       </div>
+//                       <h3 className="font-bold mb-2 line-clamp-2">
+//                         {relatedPost.title}
+//                       </h3>
+//                       <div className="text-sm text-muted-foreground mb-4 line-clamp-2" dangerouslySetInnerHTML={{__html:
+//                               relatedPost.excerpt.length > 100
+//                           ? relatedPost.excerpt.slice(0, 100) + "..."
+//                          : relatedPost.excerpt
+//                       }} />
+                        
+                      
+//                       <Button asChild variant="outline" size="sm">
+//                         <Link to={`/news/${relatedPost.id}`}>
+//                           Read More
+//                         </Link>
+//                       </Button>
+//                     </CardContent>
+//                   </Card>
+//                   </Link>
+//                 ))}
+//               </div>
+//             </div>
+//           </section>
+//         )} */}
+//       </main>
+
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default NewsDetail;
+
