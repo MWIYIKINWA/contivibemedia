@@ -75,7 +75,7 @@ const ServiceDetail = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl" />
               </div>
 
-              <div className='mx-10'>
+              <div className='mx-3'>
                 
                 {/* <h1 className="text-4xl md:text-5xl font-bold mb-6 font-keanutty">
                   {service.title}
