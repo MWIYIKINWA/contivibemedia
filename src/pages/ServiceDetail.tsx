@@ -75,14 +75,14 @@ const ServiceDetail = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl" />
               </div>
 
-              <div className='mx-3'>
+              <div className='mx-auto'>
                 
                 {/* <h1 className="text-4xl md:text-5xl font-bold mb-6 font-keanutty">
                   {service.title}
                 </h1> */}
                 
-              <div className="prose">
-                  <div className="text-lg text-foreground mb-6 font-sans text-sm" dangerouslySetInnerHTML={{ __html: service.description }} />
+              <div className="prose" >
+                  <div  className="text-lg text-foreground mb-6 font-sans text-sm" dangerouslySetInnerHTML={{ __html: service.description }} />
               </div>
 
 

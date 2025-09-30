@@ -2,33 +2,33 @@ import { useEffect } from 'react';
 
 const useBlockMouseEvents = () => {
   useEffect(() => {
+    const isAllowedTarget = (target: EventTarget | null): boolean => {
+      if (!(target instanceof HTMLElement)) return false;
+
+      return (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement || // Native dropdowns
+        target.closest('.dropdown') !== null || // Custom dropdowns by class
+        target.getAttribute('role') === 'combobox' // ARIA role for dropdowns
+      );
+    };
+
     const blockContextMenu = (e: MouseEvent) => {
-      // Allow right-click only on input elements or textareas
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-      e.preventDefault(); // Block right-click (context menu)
+      if (isAllowedTarget(e.target)) return;
+      e.preventDefault();
     };
 
     const blockLeftClick = (e: MouseEvent) => {
-      // Allow left-click on input elements or textareas
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
+      if (isAllowedTarget(e.target)) return;
       if (e.button === 0) {
-        // Left-click
         e.preventDefault();
         e.stopPropagation();
       }
     };
 
     const blockKeys = (e: KeyboardEvent) => {
-      // Allow keys in inputs, textareas, etc.
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-
-      // Block Ctrl+C, Ctrl+U, and Ctrl+S outside of input areas
+      if (isAllowedTarget(e.target)) return;
       if (e.ctrlKey && ['c', 'u', 's'].includes(e.key.toLowerCase())) {
         e.preventDefault();
       }
@@ -45,5 +45,6 @@ const useBlockMouseEvents = () => {
     };
   }, []);
 };
+
 
 export default useBlockMouseEvents;

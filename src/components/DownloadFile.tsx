@@ -15,12 +15,20 @@ const handleDownload = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
 
+    // Add timestamp to prevent caching
+    const pdfUrl = data.file_url + (data.file_url.includes('?') ? '&' : '?') + 'download=true&t=' + Date.now();
+    
     const link = document.createElement('a');
-    link.href = data.file_url;
-    link.download = data.file_name || 'contivibe.pdf';
+    link.href = pdfUrl;
+    link.download = 'contivibe.pdf';
+    link.setAttribute('type', 'application/pdf');
     document.body.appendChild(link);
     link.click();
-    link.remove();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      window.open(data.file_url, '_blank');
+    }, 1000);
 
     setStatus('done');
     setTimeout(() => setStatus('idle'), 2000);

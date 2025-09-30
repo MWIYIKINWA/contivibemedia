@@ -50,27 +50,52 @@ const { services, loading } = useServices();
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+  try {
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('service', formData.service);
+    formDataToSend.append('message', formData.message);
+
+    const response = await fetch('https://contivibemedia.com/send_email/send_email.php', {
+      method: 'POST',
+      body: formDataToSend,
+    });
+
+    const result = await response.text();
+
+    if (response.ok && result.includes('Thank you')) {
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We will get back to you shortly.",
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+    } else {
+      throw new Error(result || 'Failed to send message');
+    }
+  } catch (error) {
+    console.error('Error sending message:', error);
     toast({
-      title: "Message Sent Successfully!",
-      description: "We will get back to you shortly.",
+      title: "Error Sending Message",
+      description: "Please try again or contact us directly.",
+      variant: "destructive",
     });
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   const contactInfo = [
     {

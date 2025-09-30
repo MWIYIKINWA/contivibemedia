@@ -84,13 +84,13 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           <h1 className="text-4xl font-bold text-primary font-roboto">
             Contivibe Media
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground font-sans">
             We Capture Moments & Transform them into Brand Impact
           </p>
         </div>
 
         {/* Progress */}
-        <div className="space-y-4">
+        <div className="space-y-4 font-roboti">
           <div className="text-6xl font-bold text-primary tabular-nums">
             {Math.round(progress)}%
           </div>
@@ -98,7 +98,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
         </div>
 
         {/* Loading text */}
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm text-muted-foreground font-roboto">
           Loading your creative experience...
         </div>
       </div>

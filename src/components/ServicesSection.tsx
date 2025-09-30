@@ -50,15 +50,7 @@ const { services, loading} = useServices();
                 </h4>
                 <div
                   className="font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
-                    dangerouslySetInnerHTML={{
-                      __html: (() => {
-                        const words = service.description.split(' ');
-                        const limited = words.length > 15
-                          ? words.slice(0, 15).join(' ') + '...'
-                          : service.description;
-                        return limited;
-                      })()
-                    }}
+                 dangerouslySetInnerHTML={{ __html: service.description.length > 100 ? service.description.slice(0, 100) + "..." : service.description }}
 
                 />
               </CardContent>
