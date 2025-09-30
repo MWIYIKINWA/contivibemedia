@@ -3,10 +3,15 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { ArrowRight} from 'lucide-react';
 
 import { Link } from 'react-router-dom';
-import {services} from '../services/getservices'
+import { useServices } from '@/services/getservices';
+
+
 
 
 const ServicesSection = () => {
+  
+const { services, loading} = useServices();
+
   return (
     <section className="section-padding bg-gradient-to-b from-muted/50 to-background">
       <div className="container-custom">
@@ -31,7 +36,7 @@ const ServicesSection = () => {
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
-                    src={service.image}
+                    src={service.featured_image}
                     alt={service.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -44,11 +49,11 @@ const ServicesSection = () => {
                   {service.title}
                 </h4>
                 <div
-                  className="font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
+                  className="prose font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
                   dangerouslySetInnerHTML={{
                     __html:
-                      service.description.length > 100
-                        ? service.description.slice(0, 100) + "..."
+                      service.description.length > 200
+                        ? service.description.slice(0, 200) + "..."
                         : service.description
                   }}
                 />

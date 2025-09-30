@@ -9,6 +9,7 @@ import TeamSection from '@/components/TeamSection';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LinkedInWidget from '@/components/LinkedIn_feed';
 
 
 
@@ -253,6 +254,7 @@ positivity, and ability to provoke specific energy through our work.
       </main>
       {/* <AboutSection/> */}
       <TeamSection/>
+      
       <Footer />
     </div>
   );

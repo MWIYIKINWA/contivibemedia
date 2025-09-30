@@ -29,7 +29,7 @@ const AboutSection = () => {
                 Contivibe Media combines "Conti" from "content" and "Vibe, vibe meaning "vibration" or "energy". This name means we are, a company that creates content that resonates with audiences, evoking a specific energy.
               </p>
               <p>
-                Every time we stand behind the lens or PC we are not putting something together, we are capturing moments and memories that speak 1000 words, content that resonates with audience. We blend creativity and positivity to produce moments, content full of energy, reflecting our mission to produce engaging and impactful media.
+                Every time we stand behind the lens or PC we are not putting something together, we are capturing moments and memories that speak 1000 words, content that resonates with audiences. We blend creativity and positivity to produce moments, content full of energy, reflecting our mission to produce engaging and impactful media.
               </p>
             </div>
 
@@ -43,7 +43,7 @@ const AboutSection = () => {
                     </div>
                     <div className='font-roboto'>
                       <h4 className="font-semibold mb-2 text-foreground">Quality content</h4>
-                      <p className="text-sm text-muted-foreground ">High-quality visuals and stories to grow your brand's engagement organically..</p>
+                      <p className="text-sm text-muted-foreground ">High-quality visuals and stories to grow your brand's engagement organically.</p>
                     </div>
                   </div>
                 </CardContent>

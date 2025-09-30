@@ -19,11 +19,13 @@ import portfolio13 from '@/assets/images/slide_port/13.jpeg';
 import { fetchYouTubeVideos, YoutubeVideo } from '@/services/getYoutubeVideos';
 import thumb1 from '@/assets/images/thumbnails/black.png';
 import thumb2 from '@/assets/images/thumbnails/utube.png';
+import getPortfolioImages from '@/services/getportfolio';
 
 const VideoPortfolioSection = () => {
 
-
+  const {portfolioImages, loading} = getPortfolioImages();
   const [currentSlide, setCurrentSlide] = useState(0);
+  
 
   // latest video
 
@@ -45,75 +47,6 @@ const VideoPortfolioSection = () => {
   }, []);
 
   //.............................
-
-  const portfolioImages = [
-    {
-      src: portfolio1,
-      title: 'Nina Mugerwa',
-      description: 'Serenade 2025'
-    },
-    {
-      src: portfolio2,
-      title: 'Roofings Factory',
-      description: 'Tour'
-    },
-    {
-      src: portfolio3,
-      title: 'Nina Mugerwa',
-      description: 'Live recording Concert'
-    },
-       {
-      src: portfolio4,
-      title: 'Kabaka Birthday Run Routes Launch',
-      description: '2025'
-    },
-       {
-      src: portfolio5,
-      title: 'Inaugural Marketers Golf',
-      description: 'Tournament'
-    },
-       {
-      src: portfolio6,
-      title: 'Inaugural Marketers Golf',
-      description: 'Tournament'
-    },
-       {
-      src: portfolio7,
-      title: 'HR to Non HR',
-      description: 'Workshop'
-    },
-       {
-      src: portfolio8,
-      title: 'NBL',
-      description: 'Brand pack'
-    },
-       {
-      src: portfolio9,
-      title: 'Inaugural Marketers Golf',
-      description: 'Tournament'
-    },
-       {
-      src: portfolio10,
-      title: 'Cancer Run',
-      description: '2024'
-    },
-       {
-      src: portfolio11,
-      title: 'CEO Summit',
-      description: 'Workshop'
-    },
-       {
-      src: portfolio12,
-      title: 'CEO Summit',
-      description: 'Workshop'
-    },
-        {
-      src: portfolio13,
-      title: 'Uganda Airlines CEO Jennifer Bamuturaki',
-      description: 'CEO Workshop'
-    },
-    
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -160,9 +93,9 @@ useEffect(() => {
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
                   {portfolioImages.map((image, index) => (
-                    <div key={index} className="w-full flex-shrink-0 relative">
+                    <div key={image.id} className="w-full flex-shrink-0 relative">
                       <img
-                        src={image.src}
+                        src={image.image_url}
                         alt={image.title}
                         className="w-full aspect-[4/3] object-cover"
                       />

@@ -10,7 +10,7 @@ import {
   Twitter
 } from 'lucide-react';
 import logo from '@/assets/images/logo-white.png'
-import { services } from '@/services/getservices';
+import { useServices } from '@/services/getservices'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTiktok,
@@ -22,6 +22,8 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const { services, loading } = useServices();
+
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
@@ -31,11 +33,10 @@ const Footer = () => {
     { name: 'Contact Us', href: '/contact' },
   ];
 
-  const service_titles = services.map(service => (
-    {
-    title : service.title,
-    id : service.id
-  }))
+    const service_titles = services.map(service => ({
+    title: service.title,
+    id: service.id,
+  }));
 
   return (
     <footer className="bg-foreground text-background">

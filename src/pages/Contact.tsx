@@ -20,13 +20,17 @@ import { useToast } from '@/hooks/use-toast';
 import heroBg from '@/assets/images/header1.webp';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
-import { services } from '@/services/getservices';
+import { useServices } from '@/services/getservices'; 
+
 
 const Contact = () => {
   const breadcrumbs = [
     { name: 'Home', href: '/' },
     { name: 'Contact Us' }
   ];
+
+const { services, loading } = useServices();
+
 
   const [formData, setFormData] = useState({
     name: '',

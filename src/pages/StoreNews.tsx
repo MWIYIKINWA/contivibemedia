@@ -8,12 +8,15 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User, Eye, ArrowRight, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import heroBg from '@/assets/images/header1.webp';
-import {  featuredPost,categories,blogPosts} from '@/services/getnews'
+import { categories, blogPosts} from '@/services/getnews'
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
 import { Link } from 'react-router-dom';
 
 const StoreNews = () => {
+
+   const {blogposts} = blogPosts();
+
   const breadcrumbs = [
     { name: 'Home', href: '/' },
     { name: 'Sector News' }
@@ -23,13 +26,25 @@ const StoreNews = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
  
 
-  const filteredPosts = blogPosts.filter(post => {
+  const filteredPosts = blogposts.filter(post => {
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         post.body.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
+
+  const featuredPost = blogposts.length > 0 ? {
+    id: blogposts[0].id,
+    title: blogposts[0].title,
+    excerpt: blogposts[0].body,
+    author: blogposts[0].author_name,
+    date: blogposts[0].created_at,
+    readTime: blogposts[0].read_time,
+    category: blogposts[0].category,
+    image: blogposts[0].featured_image,
+    tags: blogposts[0].tags,
+  } : null;
 
   return (
     <div className="min-h-screen">
@@ -41,96 +56,71 @@ const StoreNews = () => {
         breadcrumbs={breadcrumbs}
         backgroundImage={heroBg}
       />
-      <main>
-        {/* Hero Section */}
-       
+      <main>    
+       {/* Featured Post */}
+  {featuredPost && (
+  <section className="py-10 font-roboto">
+    <div className="container-custom">
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold mb-2">Featured news article</h2>
+      </div>
 
-      
-
-        {/* Categories Filter */}
-        {/* <section className="pt-4 pb-2 bg-muted/30">
-          <div className="container-custom">
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={selectedCategory === category.id 
-                    ? "bg-primary text-primary-foreground" 
-                    : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  }
-                >
-                  {category.name}
-                </Button>
-              ))}
+      <Link to={`/news/${featuredPost.id}`}>
+        <Card className="border-0 shadow-2xl bg-card/50 backdrop-blur-sm overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-0">
+            <div className="relative">
+              <img 
+                src={featuredPost.image} 
+                alt={featuredPost.title}
+                className="w-full h-64 lg:h-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <Badge className="bg-primary text-primary-foreground">
+                  Featured
+                </Badge>
+              </div>
             </div>
-          </div>
-        </section> */}
-
-        {/* Featured Post */}
-        <section className="py-10 font-roboto">
-          <div className="container-custom">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-2">Featured news article</h2>
-            </div>
-
-            <Link to={`/news/${featuredPost.id}`}>
-                        <Card className="border-0 shadow-2xl bg-card/50 backdrop-blur-sm overflow-hidden">
-              <div className="grid lg:grid-cols-2 gap-0">
-                <div className="relative">
-                  <img 
-                    src={featuredPost.image} 
-                    alt={featuredPost.title}
-                    className="w-full h-64 lg:h-full object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-primary-foreground">
-                      Featured
-                    </Badge>
-                  </div>
+            
+            <CardContent className="p-8 flex flex-col justify-center">
+              <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {new Date(featuredPost.date).toLocaleDateString()}
+                </div>
+                <div className="flex items-center">
+                  <Clock className="w-4 h-4 mr-1" />
+                  {featuredPost.readTime} min read
+                </div>
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                {featuredPost.title}
+              </h3>
+              
+              <div className="text-muted-foreground mb-6 leading-relaxed font-sans" dangerouslySetInnerHTML={{__html: featuredPost.excerpt.length > 100
+                      ? featuredPost.excerpt.slice(0, 100) + "..."
+                     : featuredPost.excerpt}}/>    
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <User className="w-4 h-4 mr-2 text-muted-foreground" />
+                  <span className="text-sm font-medium">{featuredPost.author}</span>
                 </div>
                 
-                <CardContent className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {new Date(featuredPost.date).toLocaleDateString()}
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {featuredPost.readTime}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-                    {featuredPost.title}
-                  </h3>
-                  
-                  <div className="text-muted-foreground mb-6 leading-relaxed font-sans" dangerouslySetInnerHTML={{__html:            featuredPost.excerpt.length > 100
-                          ? featuredPost.excerpt.slice(0, 100) + "..."
-                         : featuredPost.excerpt}}/>    
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <span className="text-sm font-medium">{featuredPost.author}</span>
-                    </div>
-                    
-                   <Link to={`/news/${featuredPost.id}`}>
-                      <Button className="bg-primary text-primary-foreground hover:bg-brand-red-hover">
-                      Read Article
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                   </Link>
-                  </div>
-                </CardContent>
+               <Link to={`/news/${featuredPost.id}`}>
+                  <Button className="bg-primary text-primary-foreground hover:bg-brand-red-hover">
+                  Read Article
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+               </Link>
               </div>
-            </Card>
-            </Link>
-
+            </CardContent>
           </div>
-        </section>
+        </Card>
+      </Link>
+    </div>
+  </section>
+)}
 
 
            <div className="container-custom my-6">
@@ -170,7 +160,7 @@ const StoreNews = () => {
                 >
                   <div className="relative">
                     <img 
-                      src={post.image} 
+                      src={post.featured_image} 
                       alt={post.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -185,11 +175,11 @@ const StoreNews = () => {
                     <div className="flex items-center space-x-4 text-xs text-muted-foreground mb-3">
                       <div className="flex items-center">
                         <Calendar className="w-3 h-3 mr-1" />
-                        {new Date(post.date).toLocaleDateString()}
+                        {new Date(post.created_at).toLocaleDateString()}
                       </div>
                       <div className="flex items-center">
                         <Clock className="w-3 h-3 mr-1" />
-                        {post.readTime}
+                        {post.read_time}
                       </div>
                     </div>
                     
@@ -201,9 +191,9 @@ const StoreNews = () => {
                   <CardContent className="pt-0">
                     <div className="text-muted-foreground text-sm mb-4 leading-relaxed"  dangerouslySetInnerHTML={{
                            __html:
-                   post.excerpt.length > 100
-                  ? post.excerpt.slice(0, 100) + "..."
-                  : post.excerpt
+                   post.body.length > 100
+                  ? post.body.slice(0, 100) + "..."
+                  : post.body
                       }}/>
                      
                     
@@ -212,7 +202,7 @@ const StoreNews = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-xs text-muted-foreground">
                         <User className="w-3 h-3 mr-1" />
-                        {post.author}
+                        {post.author_name}
                       </div>
                       <Button 
                         variant="ghost" 

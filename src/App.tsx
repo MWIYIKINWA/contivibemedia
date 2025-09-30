@@ -14,15 +14,29 @@ import NotFound from "./pages/NotFound";
 import { RadioProvider } from "./context/AppContext";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ServiceDetail from "./pages/ServiceDetail";
 import NewsDetail from "./pages/NewsDetail";
 import GoToTop from "./components/GoToTop";
 import useBlockMouseEvents from "./components/restrictMouseClicks";
+import LoadingScreen from "./components/LoadingScreen";
 
 const queryClient = new QueryClient();
 
 const App = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const minLoadTime = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(minLoadTime);
+  }, []);
+
+
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -34,6 +48,11 @@ const App = () => {
 
 
   useBlockMouseEvents();
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />;
+  }
+
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -7,12 +7,12 @@ import { CircleMinus, Dot } from 'lucide-react';
 import heroBg from '@/assets/images/header1.webp';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
-import { services } from '../services/getservices';
-import { features } from 'process';
+import { useServices } from '@/services/getservices'; 
 import DownloadButton from '@/components/DownloadFile';
 
 const ServiceDetail = () => {
   const { id } = useParams();
+  const { services, loading } = useServices();
   const service = services.find(s => s.id === parseInt(id || ''));
 
     const breadcrumbs = [
@@ -23,16 +23,27 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+       <>
         <Header />
+        <WhatsAppChat />
+      <ScrollToTop />
+      <PageHeader 
+        title="Services"
+        breadcrumbs={breadcrumbs}
+        backgroundImage={heroBg}
+      />
+      <div className="min-h-screen flex items-center justify-center">
+        
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Service Not Found</h1>
+          <h1 className="text-2xl  mb-4">Loading...</h1>
           <Link to="/services">
             <Button>Back to Services</Button>
           </Link>
         </div>
-        <Footer />
+      
       </div>
+        <Footer />
+       </>
     );
   }
 
@@ -57,7 +68,7 @@ const ServiceDetail = () => {
 
             <div className="relative">
                 <img 
-                  src={service.image} 
+                  src={service.featured_image} 
                   alt={service.title}
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
@@ -70,40 +81,18 @@ const ServiceDetail = () => {
                   {service.title}
                 </h1> */}
                 
-                <div className="font-sans text-justify" dangerouslySetInnerHTML={{ __html: service.description }} />
+                <div className="font-sans text-foreground text-sm prose prose-lg max-w-none text-justify" dangerouslySetInnerHTML={{ __html: service.description }} />
 
-
-                <div className="text-md grid grid-cols-1 gap-6 mb-8">
-                  
-                    
-                    {
-                       service.features.map((feature, index)=>(
-                                           
-                          <div key={index} className="font-sans text-md">
-                             
-                                    <div className="flex items-center">
-                                    <Dot className="w-6 h-6 text-primary mr-3" />
-                                    <p className="">{feature}</p>
-                                    </div> 
-                          </div>
-                    
-                       ))
-                    }
-
-
-                 
-      
-                </div>
 
               
-                     <Link to='/contact'>
-                <Button size="lg" className="bg-primary hover:bg-brand-red-hover">
+              <Link to='/contact'>
+                <Button size="lg" className="bg-primary hover:bg-brand-red-hover mt-5">
                   Contact Us
                 </Button>
                  </Link>
 
                   <div className='mt-10'>
-                   <DownloadButton  path='../CONTIVIBE_FILE.pdf'/>  
+                   <DownloadButton/>  
                  </div> 
                 
 

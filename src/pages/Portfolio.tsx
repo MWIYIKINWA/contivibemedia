@@ -9,21 +9,9 @@ import heroBg from '@/assets/images/header1.webp';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
-import im1 from '../assets/images/slide_port/1.webp'
-import im2 from '../assets/images/slide_port/2.webp'
-import im3 from '../assets/images/slide_port/3.webp'
-import im4 from '../assets/images/slide_port/4.webp'
-import im5 from '../assets/images/slide_port/5.webp'
-import im6 from '../assets/images/slide_port/6.webp'
-import im7 from '../assets/images/slide_port/7.webp'
-import im8 from '../assets/images/slide_port/8.webp'
-import im9 from '../assets/images/slide_port/9.jpeg'
-import im10 from '../assets/images/slide_port/10.jpeg'
-import im11 from '../assets/images/slide_port/11.webp'
-import im12 from '../assets/images/slide_port/12.webp'
-import im13 from '../assets/images/slide_port/13.jpeg'
 import { Link } from 'react-router-dom';
 import { fetchYouTubeVideos, YoutubeVideo } from "../services/getYoutubeVideos";
+import getPortfolioImages from '@/services/getportfolio';
 
 const Portfolio = () => {
   const breadcrumbs = [
@@ -31,7 +19,7 @@ const Portfolio = () => {
     { name: 'Portfolio' }
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const {portfolioImages, loading} = getPortfolioImages();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const [videos, setVideos] = useState<any[]>([]);
@@ -57,51 +45,7 @@ const Portfolio = () => {
     { id: 'streaming', name: 'Live Streaming' },
   ];
 
-  const projects = [
-    {
-      id: 1,
-      image: im1,
-    },
-    {
-      id: 2,
-      image: im2,
-    },    {
-      id: 3,
-      image: im3,
-    },    {
-      id: 4,
-      image: im4,
-    },    {
-      id: 5,
-      image: im5,
-    },    {
-      id: 6,
-      image: im6,
-    },    {
-      id: 7,
-      image: im7,
-    },    {
-      id: 8,
-      image: im8,
-    },    {
-      id: 9,
-      image: im9,
-    },    {
-      id: 10,
-      image: im10,
-    },    {
-      id: 11,
-      image: im11,
-    },    {
-      id: 12,
-      image: im12,
-    },
-  
- 
- 
-  ];
-
-  const filteredProjects = projects
+  const filteredProjects = portfolioImages
   
 
   return (
@@ -159,9 +103,9 @@ const Portfolio = () => {
                     animationDelay: `${index * 0.1}s`
                   }}
                 >
-                  <div className="relative overflow-hidden" onMouseMove={() => setSelectedImage(project.image)} >
+                  <div className="relative overflow-hidden" onMouseMove={() => setSelectedImage(project.image_url)} >
                     <img 
-                      src={project.image} 
+                      src={project.image_url} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
@@ -171,7 +115,7 @@ const Portfolio = () => {
                         <Button
                           size="sm"
                           className="bg-background/90 text-foreground hover:bg-primary hover:text-primary-foreground backdrop-blur-sm"
-                         onClick={() => setSelectedImage(project.image)}
+                         onClick={() => setSelectedImage(project.image_url)}
                         >
                           <Eye className="w-4 h-4 mr-2" />
                           View

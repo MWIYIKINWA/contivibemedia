@@ -62,7 +62,7 @@ const {isPlaying, toggleRadio} = useRadio();
 {/* //.................... */}
           
           {/* Subtitle */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary max-w-3xl mx-auto animate-fade-up font-extrabold" style={{animationDelay: '0.2s'}}>
+          <p className="text-2xl md:text-3xl lg:text-4xl text-primary max-w-3xl mx-auto animate-fade-up font-extrabold font-roboto" style={{animationDelay: '0.2s'}}>
              Get in touch today
           </p>
           
