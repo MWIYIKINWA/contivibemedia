@@ -49,13 +49,17 @@ const { services, loading} = useServices();
                   {service.title}
                 </h4>
                 <div
-                  className="prose font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      service.description.length > 200
-                        ? service.description.slice(0, 200) + "..."
-                        : service.description
-                  }}
+                  className="font-sans text-muted-foreground mb-4 text-sm leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: (() => {
+                        const words = service.description.split(' ');
+                        const limited = words.length > 15
+                          ? words.slice(0, 15).join(' ') + '...'
+                          : service.description;
+                        return limited;
+                      })()
+                    }}
+
                 />
               </CardContent>
 

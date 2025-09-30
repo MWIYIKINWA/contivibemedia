@@ -27,7 +27,7 @@ import CMS_API_URL from './constants';
     const fetchnews = async (): Promise<blogPost[]> => {
       try {
         const response = await axios.get<blogPost[]>(API_URL);
-       return response.data.reverse();
+       return response.data;
       } catch (error) {
         console.error('Error fetching services:', error);
        return []; 

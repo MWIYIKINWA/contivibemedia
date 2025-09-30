@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/ui/PageHeader';
 import { Button } from '@/components/ui/button';
-import { CircleMinus, Dot } from 'lucide-react';
+import { CircleMinus, Dot, Ellipsis } from 'lucide-react';
 import heroBg from '@/assets/images/header1.webp';
 import WhatsAppChat from '@/components/whatsapp';
 import ScrollToTop from '@/components/scroll_to_top';
@@ -81,7 +81,9 @@ const ServiceDetail = () => {
                   {service.title}
                 </h1> */}
                 
-                <div className="font-sans text-foreground text-sm prose prose-lg max-w-none text-justify" dangerouslySetInnerHTML={{ __html: service.description }} />
+              <div className="prose">
+                  <div className="text-lg text-foreground mb-6 font-sans text-sm text-justify " dangerouslySetInnerHTML={{ __html: service.description }} />
+              </div>
 
 
               
