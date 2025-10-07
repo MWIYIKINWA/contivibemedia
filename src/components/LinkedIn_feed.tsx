@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const LinkedInWidget: React.FC = () => {
+const ElfsightSocialFeed: React.FC = () => {
+  useEffect(() => {
+    const scriptId = 'elfsight-platform-script';
+
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://elfsightcdn.com/platform.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
-    <div className='m-16' style={{ width: '100%', height: '600px', overflow: 'hidden' }}>
-      <iframe
-        src="https://www.juicer.io/api/feeds/contivibemedia/iframe"
-        width="100%"
-        height="100%"
-        style={{ border: 'none' }}
-        allowFullScreen
-        loading="lazy"
-        title="LinkedIn Feed"
-      ></iframe>
-    </div>
+    <div
+      className="elfsight-app-78b27775-2fc9-4b58-9798-a77ea61b8aa1"
+      data-elfsight-app-lazy
+    />
   );
 };
 
-
-export default LinkedInWidget;
+export default ElfsightSocialFeed;

@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Target, Video, Phone, MessageCircle } from 'lucide-react';
 import aboutImage from '@/assets/images/CONTIVIBE strategy flyer.webp';
 import whatsapIcon from '@/assets/images/whatsap.webp'
+import AboutFlyer from '@/services/getflyer';
 
 const AboutSection = () => {
   return (
@@ -82,14 +83,8 @@ const AboutSection = () => {
 
           {/* Right Image */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src={aboutImage}
-                alt="Marketing and branding design workspace"
-                className="w-full h-full lg:h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
+    
+            <AboutFlyer/>
 
             {/* Floating Stats Card */}
             <Card className="absolute -left-6 bg-background shadow-2xl border-0">
